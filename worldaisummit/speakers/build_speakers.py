@@ -18,6 +18,13 @@ Local preview (links point at your machine instead of the live site):
   open http://localhost:8000/speakers/
 
 Rebuild without --base-url before uploading to the live site.
+
+Clickable offline copy (open index.html straight from a folder, no server):
+
+  python3 build_speakers.py --offline --out preview
+
+Writes preview/index.html and preview/<slug>.html with relative links between
+the pages. Links to the rest of the site still point at the live domain.
 """
 
 import argparse
@@ -530,6 +537,8 @@ def main():
     ap.add_argument("--clean", action="store_true", help="delete the output folder first")
     ap.add_argument("--base-url", default=None,
                     help="override site.base_url, e.g. http://localhost:8000 for a local preview")
+    ap.add_argument("--offline", action="store_true",
+                    help="write flat files (index.html, <slug>.html) with relative links, for opening from a folder")
     args = ap.parse_args()
 
     data = json.loads(pathlib.Path(args.data).read_text(encoding="utf-8"))
@@ -554,8 +563,16 @@ def main():
     out = pathlib.Path(args.out)
     if args.clean and out.exists():
         shutil.rmtree(out)
-    spk_dir = out / site["speakers_path"].strip("/")
+    spk_dir = out if args.offline else out / site["speakers_path"].strip("/")
     spk_dir.mkdir(parents=True, exist_ok=True)
+
+    def offline_links(page_html):
+        """Rewrite links between the generated pages to relative file names."""
+        if not args.offline:
+            return page_html
+        base = site["base_url"].rstrip("/") + "/" + site["speakers_path"].strip("/") + "/"
+        page_html = re.sub(r'href="' + re.escape(base) + r'([a-z0-9-]+)/"', r'href="\1.html"', page_html)
+        return page_html.replace(f'href="{base}"', 'href="index.html"')
 
     speaker_tpl = Template((ROOT / "templates" / "speaker.html").read_text(encoding="utf-8"))
     index_tpl = Template((ROOT / "templates" / "index.html").read_text(encoding="utf-8"))
@@ -564,14 +581,18 @@ def main():
 
     rows, urls = [], []
     index_html, index_url, index_title, index_desc = render_index(index_tpl, site, groups, published, common)
-    (spk_dir / "index.html").write_text(index_html, encoding="utf-8")
+    (spk_dir / "index.html").write_text(offline_links(index_html), encoding="utf-8")
     urls.append((index_url, "0.8"))
 
     for s in published:
         page, url, desc = render_speaker(speaker_tpl, site, s, published, common)
-        d = spk_dir / s["slug"]
-        d.mkdir(parents=True, exist_ok=True)
-        (d / "index.html").write_text(page, encoding="utf-8")
+        if args.offline:
+            target = spk_dir / f"{s['slug']}.html"
+        else:
+            d = spk_dir / s["slug"]
+            d.mkdir(parents=True, exist_ok=True)
+            target = d / "index.html"
+        target.write_text(offline_links(page), encoding="utf-8")
         urls.append((url, "0.7" if s.get("confirmed_2026") else "0.6"))
         t = page_title(site, s)
         rows.append({
@@ -586,12 +607,14 @@ def main():
         if len(desc) > DESC_MAX:
             warnings.append(f"{s['slug']}: meta description is {len(desc)} characters (over {DESC_MAX})")
 
-    (out / "sitemap-speakers.xml").write_text(sitemap(urls, today), encoding="utf-8")
+    if not args.offline:
+        (out / "sitemap-speakers.xml").write_text(sitemap(urls, today), encoding="utf-8")
 
     # Build report
     rep = [f"# Speaker pages build report ({today})", "",
            f"- Pages written: {len(published)} speaker pages + index -> `{spk_dir}`",
-           f"- Sitemap: `{out / 'sitemap-speakers.xml'}` ({len(urls)} URLs)",
+           (f"- Sitemap: `{out / 'sitemap-speakers.xml'}` ({len(urls)} URLs)" if not args.offline
+            else "- Offline preview build: flat files, no sitemap"),
            f"- Skipped (publish=false): {len(skipped)}", ""]
     if skipped:
         rep.append("## Not published")
@@ -621,7 +644,10 @@ def main():
     if preview:
         print(f"PREVIEW BUILD: links, canonicals and sitemap point at {preview}. "
               f"Rebuild without --base-url before uploading to the live site.")
-    print(f"Sitemap: {out / 'sitemap-speakers.xml'}")
+    if args.offline:
+        print("OFFLINE PREVIEW: open index.html in this folder. Not for upload to the live site.")
+    else:
+        print(f"Sitemap: {out / 'sitemap-speakers.xml'}")
     print(f"Report:  {out / 'build-report.md'}")
     if skipped:
         print(f"Skipped {len(skipped)} (publish=false): " + ", ".join(s.get("name", "?") for s in skipped))
