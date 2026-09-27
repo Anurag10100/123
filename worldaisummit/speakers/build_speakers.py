@@ -92,7 +92,7 @@ def paragraphs(text):
 # ----------------------------------------------------------------------------
 
 def validate(data):
-    errors, warnings = [], []
+    errors, warnings, no_session = [], [], []
     site = data.get("site", {})
     for key in ("base_url", "site_name", "speakers_path", "event_name", "event_start",
                 "event_end", "event_dates_text", "venue", "city", "organiser", "pass_url",
@@ -134,7 +134,7 @@ def validate(data):
                     except ValueError:
                         errors.append(f"{label}: session.date must be YYYY-MM-DD")
         if s.get("confirmed_2026") and not session:
-            warnings.append(f"{label}: confirmed for 2026 but no session details yet")
+            no_session.append(label)
         if session and not s.get("confirmed_2026"):
             warnings.append(f"{label}: has a session but confirmed_2026 is false (session is hidden until confirmed)")
         if s.get("photo"):
@@ -142,6 +142,9 @@ def validate(data):
             local = ROOT / "photos" / pathlib.Path(photo).name
             if not photo.startswith("http") and not local.exists():
                 warnings.append(f"{label}: photo '{photo}' not found in photos/ (upload it to the site at that path)")
+    if no_session:
+        warnings.append(f"{len(no_session)} confirmed 2026 speakers have no session details yet "
+                        f"(title, date, time, hall): add them in speakers.json once the agenda is final")
     return errors, warnings
 
 
@@ -601,6 +604,7 @@ def main():
             "linkedin": "yes" if s.get("linkedin") else "none",
             "session": "yes" if (s.get("confirmed_2026") and s.get("session")) else "tba",
             "demand": s.get("search_demand_in"),
+            "shared": bool(s.get("note", "").startswith("Shared name")),
         })
         if len(t) > TITLE_MAX:
             warnings.append(f"{s['slug']}: title is {len(t)} characters (over {TITLE_MAX})")
@@ -625,7 +629,8 @@ def main():
     rep.append("| Priority (India searches/mo) | Speaker | Bio | Photo | LinkedIn | Session | Title chars | Desc chars |")
     rep.append("|---:|---|---|---|---|---|---:|---:|")
     for r in sorted(rows, key=lambda r: -(r["demand"] or 0)):
-        rep.append(f"| {r['demand'] if r['demand'] is not None else '-'} | [{r['name']}]({r['url']}) | {r['bio']} | "
+        demand = "-" if r["demand"] is None else (f"{r['demand']} (shared name)" if r["shared"] else str(r["demand"]))
+        rep.append(f"| {demand} | [{r['name']}]({r['url']}) | {r['bio']} | "
                    f"{r['photo']} | {r['linkedin']} | {r['session']} | {r['title_len']} | {r['desc_len']} |")
     rep.append("")
     missing_bio = [r["name"] for r in rows if r["bio"] == "FALLBACK"]

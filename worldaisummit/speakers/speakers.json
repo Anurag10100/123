@@ -95,13 +95,14 @@
       "slug": "pankaj-kumar-pandey",
       "name": "Pankaj Kumar Pandey, IAS",
       "title_role": "Principal Secretary, e-Governance, Karnataka",
-      "role": "Principal Secretary to Government, DPAR (e-Governance); Managing Director, Karnataka Power Transmission Corporation Ltd (KPTCL)",
+      "role": "Principal Secretary, Department of Personnel and Administrative Reforms (e-Governance)",
       "org": "Government of Karnataka",
       "group": "government",
       "editions": [
-        "2025"
+        "2025",
+        "2026"
       ],
-      "confirmed_2026": false,
+      "confirmed_2026": true,
       "session": null,
       "bio": "Pankaj Kumar Pandey, an IIT Roorkee graduate in Mechanical Engineering, secured first rank in the Indian Engineering Services examination in 1999 and joined the Indian Administrative Service, Karnataka cadre, in 2000. He has served in key roles across the Karnataka state administration, including Revenue, Rural Development, Urban Development, Elections, Skill Development, Food and Civil Supplies, Health and Family Welfare, Tourism, and Industries. He holds a patent for the Swan Neck Group Operating System, a solution that created hundreds of kilometres of pedestrian-friendly space in Bengaluru, and served as Health Commissioner during the COVID-19 pandemic in 2020-21.",
       "photo": "",
@@ -184,19 +185,20 @@
     {
       "slug": "t-bhoobalan",
       "name": "T Bhoobalan, IAS",
-      "title_role": "CEO, e-Governance, Karnataka",
-      "role": "Chief Executive Officer, DPAR (e-Governance)",
+      "title_role": "CEO, Centre for e-Governance, Karnataka",
+      "role": "Chief Executive Officer, Centre for e-Governance, and Managing Director, KUIDFC",
       "org": "Government of Karnataka",
       "group": "government",
       "editions": [
-        "2025"
+        "2025",
+        "2026"
       ],
-      "confirmed_2026": false,
+      "confirmed_2026": true,
       "session": null,
       "bio": "",
       "photo": "",
       "linkedin": "",
-      "search_demand_in": 50,
+      "search_demand_in": 30,
       "publish": true
     },
     {
@@ -383,14 +385,15 @@
     {
       "slug": "sanjeev-rastogi",
       "name": "Sanjeev Rastogi",
-      "title_role": "CEO GCC, Adani Group",
-      "role": "Chief Executive Officer, Global Capability Centre",
+      "title_role": "Head, Group Policy Services, Adani Group",
+      "role": "Head - Group Policy Services",
       "org": "Adani Group",
       "group": "enterprise",
       "editions": [
-        "2025"
+        "2025",
+        "2026"
       ],
-      "confirmed_2026": false,
+      "confirmed_2026": true,
       "session": null,
       "bio": "Sanjeev Rastogi leads India's first multi-industry, multi-functional Global Capability Centre at Adani Group, setting a new benchmark for the future of business services. With a rich global background in global business services and organisational transformation, he has consistently driven large-scale change and delivered high-impact outcomes, blending operational excellence with innovation across geographies.",
       "photo": "",
@@ -565,18 +568,858 @@
       "slug": "shalini-kapoor",
       "name": "Shalini Kapoor",
       "title_role": "Chief Strategist, Data and AI, EkStep",
-      "role": "Chief Strategist, Data and AI",
+      "role": "Chief Strategist - Data and AI",
       "org": "EkStep Foundation",
       "group": "founders",
       "editions": [
-        "2025"
+        "2025",
+        "2026"
       ],
-      "confirmed_2026": false,
+      "confirmed_2026": true,
       "session": null,
       "bio": "Shalini Kapoor is a technology strategist and innovator with over 28 years of experience applying AI and emerging technologies for sustainable growth. As Chief Strategist at EkStep Foundation she leads Data and AI initiatives across education, government, healthcare, agriculture and the non-profit sector. She previously led technology and strategic initiatives for AWS Asia Pacific and India Public Sector, was the first IBM Fellow from India, holds 15 patents, serves on the AI Advisory Board at the World Economic Forum, and is the author of AI for You: The New Game Changer.",
       "photo": "",
       "linkedin": "",
+      "search_demand_in": 6600,
+      "publish": true,
+      "note": "Shared name: most of the search volume is for other people."
+    },
+    {
+      "slug": "ravikumar-surpur",
+      "name": "Dr Ravikumar Surpur, IAS",
+      "role": "Secretary, Information Technology & Communication Department; Secretary, Planning and Statistics Department; Chairman, RajComp Info Services Limited (RISL)",
+      "title_role": "Secretary, IT & Communication, Rajasthan",
+      "org": "Government of Rajasthan",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
       "search_demand_in": null,
+      "publish": true,
+      "note": "Organisation \"Government of Rajasthan\" inferred from the RISL and IT&C Department roles shown on the site; confirm."
+    },
+    {
+      "slug": "aman-mittal",
+      "name": "Aman Mittal, IAS",
+      "role": "Joint Chief Executive Officer",
+      "title_role": "Joint CEO, MITRA, Maharashtra",
+      "org": "Maharashtra Institution for Transformation (MITRA)",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 480,
+      "publish": true
+    },
+    {
+      "slug": "sanjeev-gupta",
+      "name": "Sanjeev Gupta",
+      "role": "Chief Executive Officer",
+      "title_role": "CEO, Karnataka Digital Economy Mission",
+      "org": "Karnataka Digital Economy Mission",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 1300,
+      "publish": true,
+      "note": "Shared name: most of the search volume is for other people."
+    },
+    {
+      "slug": "hemant-garg",
+      "name": "Hemant Garg",
+      "role": "Deputy Director",
+      "title_role": "Deputy Director, Ministry of Labour and Employment",
+      "org": "Ministry of Labour and Employment, Government of India",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "prajeet-prabhakaran",
+      "name": "Prajeet Prabhakaran",
+      "role": "Regional Director",
+      "title_role": "Regional Director, Embassy of Austria",
+      "org": "Embassy of Austria, Commercial Section",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "ram-mohan-rao",
+      "name": "Ram Mohan Rao",
+      "role": "Executive Director",
+      "title_role": "Executive Director, SEBI",
+      "org": "Securities and Exchange Board of India (SEBI)",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 480,
+      "publish": true,
+      "note": "Shared name: part of the search volume is for other people."
+    },
+    {
+      "slug": "m-balasubramaniam",
+      "name": "M. Balasubramaniam (Bala MS)",
+      "role": "CEO, Stratinfinity Inc; Chairman, Southern Regional Committee, AICTE; Deputy Chairman, Ministry of Education & AICTE Investor Network",
+      "title_role": "Chairman, Southern Regional Committee, AICTE",
+      "org": "All India Council for Technical Education (AICTE)",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "mahesh-hariharan-iyer",
+      "name": "Mahesh Hariharan Iyer",
+      "role": "Vice President of Engineering",
+      "title_role": "VP Engineering, Reserve Bank Innovation Hub",
+      "org": "Reserve Bank Innovation Hub (RBIH)",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sushil-kumar-meher",
+      "name": "Dr. Sushil Kumar Meher",
+      "role": "Head, IT and CISO",
+      "title_role": "Head, IT and CISO, AIIMS",
+      "org": "All India Institute of Medical Sciences (AIIMS)",
+      "group": "government",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sandeep-varaganti",
+      "name": "Sandeep Varaganti",
+      "role": "CEO, JioMart",
+      "title_role": "CEO, JioMart, Reliance Retail",
+      "org": "Reliance Retail",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 210,
+      "publish": true
+    },
+    {
+      "slug": "george-inasu",
+      "name": "George Inasu",
+      "role": "Managing Director and Country Head",
+      "title_role": "MD and Country Head, Fidelity National Financial India",
+      "org": "Fidelity National Financial India",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "anand-ramakrishnan",
+      "name": "Anand Ramakrishnan",
+      "role": "Managing Director",
+      "title_role": "Managing Director, Equiniti India",
+      "org": "Equiniti India",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "tulshekar-gangireddy",
+      "name": "Tulshekar Gangireddy",
+      "role": "Executive Director & Head of Data Strategy",
+      "title_role": "ED and Head of Data Strategy, JPMorgan Chase",
+      "org": "JPMorgan Chase & Co",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "deepak-mohanty",
+      "name": "Deepak Mohanty",
+      "role": "Executive Director",
+      "title_role": "Executive Director, Wells Fargo",
+      "org": "Wells Fargo",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "anand-thakur",
+      "name": "Anand Thakur",
+      "role": "Chief Product and Technology Officer",
+      "title_role": "CPTO, Reliance Retail",
+      "org": "Reliance Retail",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 590,
+      "publish": true,
+      "note": "Shared name: part of the search volume is for other people."
+    },
+    {
+      "slug": "pawan-sachdeva",
+      "name": "Pawan Sachdeva",
+      "role": "Senior Managing Director and Technology Head - India",
+      "title_role": "Senior MD and Technology Head India, Carelon",
+      "org": "Carelon Global Solutions",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "pranav-saxena",
+      "name": "Pranav Saxena",
+      "role": "Chief Product and Technology Officer",
+      "title_role": "CPTO, API Holdings",
+      "org": "API Holdings",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "suman-guha",
+      "name": "Suman Guha",
+      "role": "Chief Digital & Technology Officer",
+      "title_role": "Chief Digital and Technology Officer, Croma",
+      "org": "Tata Croma (Tata Digital)",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "avinash-naik",
+      "name": "Avinash Naik",
+      "role": "Chief Information Officer",
+      "title_role": "CIO, Bajaj Allianz General Insurance",
+      "org": "Bajaj Allianz General Insurance",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 210,
+      "publish": true
+    },
+    {
+      "slug": "harsh-vardhan",
+      "name": "Harsh Vardhan",
+      "role": "Global Head - AI & Digital Innovation",
+      "title_role": "Global Head, AI and Digital Innovation, Apollo Tyres",
+      "org": "Apollo Tyres Ltd",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 22200,
+      "publish": true,
+      "note": "Shared name: the search volume is almost entirely for other people."
+    },
+    {
+      "slug": "vijaya-kadiyala",
+      "name": "Vijaya Kadiyala",
+      "role": "Executive Director",
+      "title_role": "Executive Director, DBS Bank",
+      "org": "DBS Bank",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "shanmugam-manivannan",
+      "name": "Shanmugam Manivannan",
+      "role": "Chief Digital Officer",
+      "title_role": "Chief Digital Officer, Equitas Small Finance Bank",
+      "org": "Equitas Small Finance Bank",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "rajesh-chaudhary",
+      "name": "Rajesh Chaudhary",
+      "role": "Chief Information Officer",
+      "title_role": "CIO, CSB Bank",
+      "org": "CSB Bank",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 1000,
+      "publish": true,
+      "note": "Shared name: most of the search volume is for other people."
+    },
+    {
+      "slug": "dipayan-chakraborty",
+      "name": "Dipayan Chakraborty",
+      "role": "Head, India Analytics Center",
+      "title_role": "Head, India Analytics Center, eBay",
+      "org": "eBay",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 390,
+      "publish": true
+    },
+    {
+      "slug": "archana-menon",
+      "name": "Archana Menon",
+      "role": "Head of Analytics & Watches",
+      "title_role": "Head of Analytics and Watches, Titan",
+      "org": "Titan",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 390,
+      "publish": true
+    },
+    {
+      "slug": "deepika-sandeep",
+      "name": "Deepika Sandeep",
+      "role": "Head - AI/ML CoE",
+      "title_role": "Head, AI/ML CoE, HSBC",
+      "org": "HSBC",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "anil-varma",
+      "name": "Anil Varma",
+      "role": "Chief Technology Officer",
+      "title_role": "CTO, Multi Commodity Exchange Clearing Corporation",
+      "org": "Multi Commodity Exchange Clearing Corporation",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "deepak-sharma",
+      "name": "Deepak Sharma",
+      "role": "Independent Director",
+      "title_role": "Independent Director, Suryoday Small Finance Bank",
+      "org": "Suryoday Small Finance Bank",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 14800,
+      "publish": true,
+      "note": "Shared name: the search volume is almost entirely for other people."
+    },
+    {
+      "slug": "animesh-kishore",
+      "name": "Animesh Kishore",
+      "role": "Head, Centre of Excellence (CoE), Digital & Analytics",
+      "title_role": "Head, Digital and Analytics CoE, ITC",
+      "org": "ITC Limited",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sandeep-sharma",
+      "name": "Sandeep Sharma",
+      "role": "Head of Technology & Product (eCommerce)",
+      "title_role": "Head of Technology and Product, Shoppers Stop",
+      "org": "Shoppers Stop",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 74000,
+      "publish": true,
+      "note": "Shared name: the search volume is almost entirely for other people."
+    },
+    {
+      "slug": "shireen-ali",
+      "name": "Shireen Ali",
+      "role": "Head, UK Data Enablement and Standards",
+      "title_role": "Head, UK Data Enablement and Standards, HSBC",
+      "org": "HSBC",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "vishal-chugh",
+      "name": "Vishal Chugh",
+      "role": "EVP - Head Risk FRM",
+      "title_role": "EVP, Head Risk FRM, Tata Capital",
+      "org": "Tata Capital",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 5400,
+      "publish": true,
+      "note": "Shared name: check whether the search volume is for this person."
+    },
+    {
+      "slug": "shantanu-dasgupta",
+      "name": "Shantanu Dasgupta",
+      "role": "Head of Digital Initiatives, Treasury & Transaction Banking",
+      "title_role": "Head of Digital Initiatives, Treasury and Transaction Banking, Axis Bank",
+      "org": "Axis Bank",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sushan-rungta",
+      "name": "Sushan Rungta",
+      "role": "Chief Technology Officer",
+      "title_role": "CTO, Absolute",
+      "org": "Absolute",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "ganesh-joshi",
+      "name": "Ganesh Joshi",
+      "role": "Chief Information Officer (CIO)",
+      "title_role": "CIO, Nilons Enterprises",
+      "org": "Nilons Enterprises",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 2900,
+      "publish": true,
+      "note": "Shared name: most of the search volume is for other people."
+    },
+    {
+      "slug": "praveen-bist",
+      "name": "Praveen Bist",
+      "role": "Chief Information Officer",
+      "title_role": "CIO, Amrita Hospitals",
+      "org": "Amrita Hospitals",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "kuldeep-t",
+      "name": "Kuldeep T",
+      "role": "CISO & DPO",
+      "title_role": "CISO and DPO, BigBasket",
+      "org": "BigBasket",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "anshuma-singh",
+      "name": "Anshuma (Dogra) Singh",
+      "role": "Senior Director, India IT Head/Site Leader",
+      "title_role": "Senior Director, India IT Head, Applied Materials",
+      "org": "Applied Materials",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "padmanaban-ta",
+      "name": "Padmanaban TA",
+      "role": "DGM & Head of Digital Banking",
+      "title_role": "DGM and Head of Digital Banking, Karnataka Bank",
+      "org": "Karnataka Bank",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "joyce-rodriguez",
+      "name": "Joyce Rodriguez",
+      "role": "Head of Digital Cybersecurity",
+      "title_role": "Head of Digital Cybersecurity, Airbus India",
+      "org": "Airbus India",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "pavankumar-gurazada",
+      "name": "Pavankumar Gurazada",
+      "role": "Associate Director",
+      "title_role": "Associate Director, Great Learning",
+      "org": "Great Learning",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "aneel-savalagi",
+      "name": "Aneelkumar (Aneel) Savalagi",
+      "role": "Global Chapter Leader - ICC (Innovation Capability Centre), Global DD&T (Data, Digital & Technology)",
+      "title_role": "Global Chapter Leader, ICC, Takeda",
+      "org": "Takeda",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sivakumar-selva-ganapathy",
+      "name": "Sivakumar Selva Ganapathy",
+      "role": "VP - Software Engineering; Head - Open Blue India & APAC Solutions; Director - JCIPL",
+      "title_role": "VP Software Engineering, Johnson Controls",
+      "org": "Johnson Controls",
+      "group": "enterprise",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sandhya-vasudevan",
+      "name": "Sandhya Vasudevan",
+      "role": "Board Member, TiE Bangalore; Former MD, Deutsche Bank & Thomson Reuters; Independent Director & Trustee",
+      "title_role": "Board Member, TiE Bangalore",
+      "org": "TiE Bangalore",
+      "group": "founders",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "suman-dash",
+      "name": "Suman Dash",
+      "role": "Chief Operating Officer",
+      "title_role": "COO, Acsel Technology Forum",
+      "org": "Acsel Technology Forum",
+      "group": "founders",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "shashank-randev",
+      "name": "Shashank Randev",
+      "role": "Founder & General Partner",
+      "title_role": "Founder and General Partner, 247VC",
+      "org": "247VC",
+      "group": "founders",
+      "editions": [
+        "2026"
+      ],
+      "confirmed_2026": true,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 90,
       "publish": true
     }
   ]

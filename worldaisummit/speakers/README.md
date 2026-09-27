@@ -161,25 +161,32 @@ description, canonical and the JSON-LD block are what the pages rank with.
 
 ## Priority order (India searches per month for the name, September 2026)
 
-Publish all pages at once; get bios and photos for these first.
+Publish all pages at once; get bios and photos for these first. Names marked
+"shared" are common names where most of the volume is for other people, so
+treat them as unproven.
 
 | Speaker | Searches/mo | Notes |
 |---|---:|---|
-| Priyank Kharge | 49,500 | Cypher ranks #7 for this name with a speaker page (difficulty 0) |
-| Prashant Pitti | 2,900 | Bio available from the 2025 page |
-| Abhishek Singh, IAS (IndiaAI) | 390 | |
-| Pankaj Kumar Pandey, IAS | 320 | Bio available |
-| Sahil Kini | 320 | |
-| Vikalp Sahni | 170 | |
-| Rahul Sharanappa Sankanur, IAS | 110 | |
-| Seeram Sambasiva Rao, IAS | 110 | |
-| Ratan Kumar Kesh | 90 | Bio available |
-| Sharad Sharma | 90 | Bio available |
-| T Bhoobalan, IAS | 50 | |
+| Priyank Kharge (2025) | 49,500 | Cypher ranks #7 for this name with a speaker page (difficulty 0) |
+| Prashant Pitti (2025) | 2,900 | Bio available |
+| Aman Mittal, IAS | 480 | 2026 confirmed |
+| Ram Mohan Rao | 480 | 2026 confirmed, shared |
+| Abhishek Singh, IAS (2025) | 390 | |
+| Dipayan Chakraborty | 390 | 2026 confirmed |
+| Archana Menon | 390 | 2026 confirmed |
+| Pankaj Kumar Pandey, IAS | 320 | 2025 and 2026, bio available |
+| Sahil Kini (2025) | 320 | |
+| Sandeep Varaganti | 210 | 2026 confirmed |
+| Avinash Naik | 210 | 2026 confirmed |
+| Vikalp Sahni (2025) | 170 | |
+| Shashank Randev | 90 | 2026 confirmed |
+| Sandeep Sharma, Harsh Vardhan, Deepak Sharma, Shalini Kapoor, Vishal Chugh, Ganesh Joshi, Sanjeev Gupta, Rajesh Chaudhary, Anand Thakur | 590 to 74,000 | shared names; volume mostly for other people |
 
 Two 2025 names are held back (`publish: false`) until their organisation is
 confirmed: Abhishek Kumar Singh (the 3,600 monthly searches for that name are
-probably for other people) and Animesh Das.
+probably for other people) and Animesh Das. Dr Ravikumar Surpur is published
+with "Government of Rajasthan" as organisation, inferred from the RISL and
+IT&C Department roles on the site; confirm it.
 
 ## Before the 2026 announcements
 
