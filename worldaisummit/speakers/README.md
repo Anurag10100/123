@@ -159,34 +159,42 @@ description, canonical and the JSON-LD block are what the pages rank with.
 - Nothing external is loaded: no fonts, scripts or tracking. Add the site's
   analytics snippet in the template if needed.
 
+## What is published now
+
+Only the 50 speakers announced for 2026 are published (`publish: true`).
+The 24 speakers from the 2025 edition stay in `speakers.json` with
+`publish: false`; flip the flag to publish any of them (Priyank Kharge's page
+alone targets 49,500 searches a month and Cypher ranks for that name with a
+speaker page).
+
+Every published page has a researched bio (LinkedIn, the organisation's own
+site, press coverage; sources are kept in `bio_sources` per speaker) and a
+short "About the organisation" box. Bios contain only facts found in those
+sources. Read `bio_notes` before publishing: they flag stale titles on the
+event site (for example Sushan Rungta's LinkedIn shows the Absolute CTO role
+ending in February 2026) and spelling differences (Rajesh Choudhary, as on
+CSB Bank's site, not Chaudhary).
+
 ## Priority order (India searches per month for the name, September 2026)
 
-Publish all pages at once; get bios and photos for these first. Names marked
-"shared" are common names where most of the volume is for other people, so
-treat them as unproven.
+Get photos for these first. Names marked "shared" are common names where most
+of the volume is for other people, so treat them as unproven.
 
 | Speaker | Searches/mo | Notes |
 |---|---:|---|
-| Priyank Kharge (2025) | 49,500 | Cypher ranks #7 for this name with a speaker page (difficulty 0) |
-| Prashant Pitti (2025) | 2,900 | Bio available |
-| Aman Mittal, IAS | 480 | 2026 confirmed |
-| Ram Mohan Rao | 480 | 2026 confirmed, shared |
-| Abhishek Singh, IAS (2025) | 390 | |
-| Dipayan Chakraborty | 390 | 2026 confirmed |
-| Archana Menon | 390 | 2026 confirmed |
-| Pankaj Kumar Pandey, IAS | 320 | 2025 and 2026, bio available |
-| Sahil Kini (2025) | 320 | |
-| Sandeep Varaganti | 210 | 2026 confirmed |
-| Avinash Naik | 210 | 2026 confirmed |
-| Vikalp Sahni (2025) | 170 | |
-| Shashank Randev | 90 | 2026 confirmed |
-| Sandeep Sharma, Harsh Vardhan, Deepak Sharma, Shalini Kapoor, Vishal Chugh, Ganesh Joshi, Sanjeev Gupta, Rajesh Chaudhary, Anand Thakur | 590 to 74,000 | shared names; volume mostly for other people |
+| Aman Mittal, IAS | 480 | |
+| Ram Mohan Rao | 480 | shared |
+| Dipayan Chakraborty | 390 | |
+| Archana Menon | 390 | |
+| Pankaj Kumar Pandey, IAS | 320 | |
+| Sandeep Varaganti | 210 | |
+| Avinash Naik | 210 | |
+| Shashank Randev | 90 | |
+| T Bhoobalan, IAS | 30 | |
+| Sandeep Sharma, Harsh Vardhan, Deepak Sharma, Shalini Kapoor, Vishal Chugh, Ganesh Joshi, Sanjeev Gupta, Rajesh Choudhary, Anand Thakur | 590 to 74,000 | shared names; volume mostly for other people |
 
-Two 2025 names are held back (`publish: false`) until their organisation is
-confirmed: Abhishek Kumar Singh (the 3,600 monthly searches for that name are
-probably for other people) and Animesh Das. Dr Ravikumar Surpur is published
-with "Government of Rajasthan" as organisation, inferred from the RISL and
-IT&C Department roles on the site; confirm it.
+Dr Ravikumar Surpur is published with "Government of Rajasthan" as
+organisation, confirmed by the Rajasthan DoIT&C page cited in his sources.
 
 ## Before the 2026 announcements
 
