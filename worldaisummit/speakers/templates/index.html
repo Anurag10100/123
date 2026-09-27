@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$page_title</title>
+<meta name="description" content="$meta_description">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="$canonical_url">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="$site_name">
+<meta property="og:title" content="$page_title">
+<meta property="og:description" content="$meta_description">
+<meta property="og:url" content="$canonical_url">
+$og_image_tag
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="$page_title">
+<meta name="twitter:description" content="$meta_description">
+<script type="application/ld+json">
+$json_ld
+</script>
+<style>
+:root{--ink:#14213d;--muted:#5b6478;--line:#e3e6ee;--accent:#0b5fff;--accent-ink:#ffffff;--bg:#ffffff;--soft:#f5f7fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.topbar{border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;min-height:64px;gap:8px 16px;padding-top:8px;padding-bottom:8px}
+.topnav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 0}
+.brand{font-weight:800;text-decoration:none;color:var(--ink);font-size:18px}
+.topnav a{margin-left:18px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+.topnav .cta{background:var(--accent);color:var(--accent-ink);padding:9px 14px;border-radius:8px}
+.crumbs{font-size:14px;color:var(--muted);padding:16px 0 0}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs span{margin:0 6px}
+.intro{padding:24px 0 8px;border-bottom:1px solid var(--line)}
+.intro h1{margin:0 0 10px;font-size:36px;line-height:1.15}
+.intro p{margin:0 0 12px;font-size:17px;max-width:760px}
+.intro .btn{margin:6px 0 18px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;padding:11px 16px;border-radius:8px}
+.jump{font-size:14px;color:var(--muted);padding:14px 0 0}
+.jump a{margin-right:14px}
+h2{font-size:24px;margin:34px 0 14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;padding:0;margin:0;list-style:none}
+.cards li{border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:flex-start}
+.cards img,.cards .ph{width:64px;height:64px;border-radius:12px;object-fit:cover;background:var(--soft);flex:0 0 64px}
+.cards .ph{display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--muted);font-size:20px}
+.cards a{font-weight:700;text-decoration:none;color:var(--ink);font-size:16px}
+.cards .role{display:block;font-size:14px;color:var(--muted);margin-top:4px}
+.cards .tag{display:inline-block;margin-top:8px;font-size:12px;font-weight:600;padding:3px 8px;border-radius:999px;background:var(--soft);border:1px solid var(--line)}
+.cards .tag.confirmed{background:#e6f4ea;border-color:#b7e1c1;color:#136c2e}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:28px 0 0;font-size:15px}
+footer{border-top:1px solid var(--line);margin-top:36px;padding:22px 0;font-size:14px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:760px){.intro h1{font-size:28px}.topnav a{margin-left:0;margin-right:12px;font-size:14px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="$home_url">$site_name</a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="$agenda_url">Agenda</a>
+      <a href="$speakers_index_url">Speakers</a>
+      <a href="$awards_url">Awards</a>
+      <a class="cta" href="$pass_url">Get your pass</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="$home_url">Home</a><span>/</span>Speakers
+  </nav>
+
+  <section class="intro">
+    <h1>$h1</h1>
+    <p>$intro_text</p>
+    <a class="btn" href="$pass_url">Get your pass</a>
+    <nav class="jump" aria-label="Speaker groups">$jump_links</nav>
+  </section>
+
+$groups_html
+
+  <div class="note">$note_text</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    $event_name is organised by $organiser. $venue, $city, $event_dates_text.
+    <br><a href="$home_url">Home</a> &middot; <a href="$agenda_url">Agenda</a> &middot; <a href="$pass_url">Delegate passes</a> &middot; <a href="$contact_url">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

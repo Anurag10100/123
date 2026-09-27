@@ -45,3 +45,12 @@ The official Claude Code plugin (`openseo@openseo` from the `every-app/open-seo`
 marketplace) is the preferred install on a local machine, but cloud sessions do
 not load plugins from user or repository settings, which is why the skills are
 committed here instead.
+
+## Speaker profile pages (worldaisummit.com)
+
+`worldaisummit/speakers/` holds a dependency-free static generator for one page
+per speaker (role, bio, session, time, hall) plus a directory page and sitemap.
+Edit `speakers.json`, run `python3 build_speakers.py --clean`, upload `dist/`.
+See `worldaisummit/speakers/README.md` for fields, deployment and SEO rules.
+Never write speaker bios from memory; leave `bio` empty and the page falls back
+to a factual sentence built from the data file.

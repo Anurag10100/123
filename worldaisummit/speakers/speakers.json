@@ -1,0 +1,583 @@
+{
+  "site": {
+    "base_url": "https://www.worldaisummit.com",
+    "site_name": "World AI Summit",
+    "speakers_path": "/speakers/",
+    "event_name": "World AI Summit 2026",
+    "event_start": "2026-10-14",
+    "event_end": "2026-10-15",
+    "event_dates_text": "14-15 October 2026",
+    "venue": "Sheraton Grand Bangalore Hotel at Brigade Gateway",
+    "city": "Bengaluru, India",
+    "organiser": "Elets Technomedia",
+    "pass_url": "/delegate/",
+    "agenda_url": "/agenda/",
+    "awards_url": "/awards/",
+    "pass_from": "Rs 20,000",
+    "pass_price_inr": 20000,
+    "og_image": "",
+    "contact_url": "/contact-us/"
+  },
+  "groups": [
+    {
+      "id": "government",
+      "title": "Government, policy and regulators"
+    },
+    {
+      "id": "enterprise",
+      "title": "Enterprise and technology leaders"
+    },
+    {
+      "id": "founders",
+      "title": "Founders, investors and ecosystem builders"
+    }
+  ],
+  "speakers": [
+    {
+      "slug": "priyank-kharge",
+      "name": "Priyank Kharge",
+      "honorific": "Shri",
+      "role": "Minister for Electronics, IT and Biotechnology, and Rural Development and Panchayat Raj",
+      "title_role": "Minister for IT/BT, Karnataka",
+      "org": "Government of Karnataka",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "role_2025": "Chief Guest",
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 49500,
+      "publish": true
+    },
+    {
+      "slug": "ekroop-caur",
+      "name": "Dr. Ekroop Caur, IAS",
+      "title_role": "Secretary, IT/BT, Karnataka",
+      "role": "Secretary, Department of Electronics, Information Technology, Biotechnology, and Science and Technology",
+      "org": "Government of Karnataka",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "role_2025": "Programme Mentor",
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "abhishek-singh",
+      "name": "Abhishek Singh, IAS",
+      "title_role": "CEO, IndiaAI Mission",
+      "role": "Additional Secretary, Ministry of Electronics and Information Technology (MeitY); Director General, NIC; CEO, IndiaAI Mission",
+      "org": "Government of India",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "role_2025": "Keynote Speaker",
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 390,
+      "publish": true
+    },
+    {
+      "slug": "pankaj-kumar-pandey",
+      "name": "Pankaj Kumar Pandey, IAS",
+      "title_role": "Principal Secretary, e-Governance, Karnataka",
+      "role": "Principal Secretary to Government, DPAR (e-Governance); Managing Director, Karnataka Power Transmission Corporation Ltd (KPTCL)",
+      "org": "Government of Karnataka",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Pankaj Kumar Pandey, an IIT Roorkee graduate in Mechanical Engineering, secured first rank in the Indian Engineering Services examination in 1999 and joined the Indian Administrative Service, Karnataka cadre, in 2000. He has served in key roles across the Karnataka state administration, including Revenue, Rural Development, Urban Development, Elections, Skill Development, Food and Civil Supplies, Health and Family Welfare, Tourism, and Industries. He holds a patent for the Swan Neck Group Operating System, a solution that created hundreds of kilometres of pedestrian-friendly space in Bengaluru, and served as Health Commissioner during the COVID-19 pandemic in 2020-21.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 320,
+      "publish": true
+    },
+    {
+      "slug": "deepak-bagla",
+      "name": "Deepak Bagla",
+      "title_role": "Mission Director, Atal Innovation Mission",
+      "role": "Mission Director, Atal Innovation Mission (AIM), NITI Aayog",
+      "org": "Government of India",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Deepak Bagla brings a rare blend of global private sector experience and public sector leadership, having worked with institutions such as the World Bank, Citibank and 3i plc across Europe, Asia, Africa and Australia. He served as Managing Director and CEO of Invest India (2015-2023), India's national investment promotion agency, guiding initiatives such as Startup India and One District One Product; under his tenure Invest India became the world's most awarded investment promotion agency. He has contributed to numerous high-level government committees on infrastructure, fintech, innovation, tourism, healthcare and startups, represented India on bilateral CEO forums with over 20 countries, and is the former President of the World Association of Investment Promotion Agencies. He holds a Bachelor's in Economics from St. Stephen's College and dual Master's degrees from Georgetown University.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "seeram-sambasiva-rao",
+      "name": "Seeram Sambasiva Rao, IAS",
+      "title_role": "Special Secretary, IT, Kerala",
+      "role": "Special Secretary, Electronics and Information Technology Department",
+      "org": "Government of Kerala",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 110,
+      "publish": true
+    },
+    {
+      "slug": "rahul-sharanappa-sankanur",
+      "name": "Rahul Sharanappa Sankanur, IAS",
+      "title_role": "Director, IT/BT, Karnataka",
+      "role": "Director, Department of Electronics, IT, Biotechnology and Science and Technology; Managing Director, KITS",
+      "org": "Government of Karnataka",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 110,
+      "publish": true
+    },
+    {
+      "slug": "darshan-hv",
+      "name": "Darshan H.V., IAS",
+      "title_role": "Additional Commissioner, Commercial Taxes, Karnataka",
+      "role": "Additional Commissioner for Commercial Taxes",
+      "org": "Government of Karnataka",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "t-bhoobalan",
+      "name": "T Bhoobalan, IAS",
+      "title_role": "CEO, e-Governance, Karnataka",
+      "role": "Chief Executive Officer, DPAR (e-Governance)",
+      "org": "Government of Karnataka",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 50,
+      "publish": true
+    },
+    {
+      "slug": "kushal-pathak",
+      "name": "Dr. Kushal Pathak",
+      "title_role": "Joint Secretary and CISO, Rajya Sabha",
+      "role": "Joint Secretary (Systems, Capacity Building) and Chief Information Security Officer",
+      "org": "Rajya Sabha, Parliament of India",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "meeta-r-lochan",
+      "name": "Meeta R Lochan, IAS",
+      "title_role": "Secretary, NCBC",
+      "role": "Secretary, National Commission for Backward Classes, Ministry of Social Justice and Empowerment",
+      "org": "Government of India",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "ramachandran-r",
+      "name": "Ramachandran R, IAS",
+      "title_role": "Managing Director, BMTC",
+      "role": "Managing Director, Bengaluru Metropolitan Transport Corporation",
+      "org": "Government of Karnataka",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "manuj-goyal",
+      "name": "Manuj Goyal, IAS",
+      "title_role": "Additional Secretary, Higher Education, Uttarakhand",
+      "role": "Additional Secretary, Higher and Technical Education",
+      "org": "Government of Uttarakhand",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "suvendu-pati",
+      "name": "Suvendu Pati",
+      "title_role": "Chief General Manager, RBI",
+      "role": "Chief General Manager",
+      "org": "Reserve Bank of India",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sahil-kini",
+      "name": "Sahil Kini",
+      "title_role": "CEO, Reserve Bank Innovation Hub",
+      "role": "Chief Executive Officer",
+      "org": "Reserve Bank Innovation Hub (RBIH)",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 320,
+      "publish": true
+    },
+    {
+      "slug": "suresh-khadakbhavi",
+      "name": "Suresh Khadakbhavi",
+      "title_role": "CEO, Digi Yatra Foundation",
+      "role": "Chief Executive Officer",
+      "org": "Digi Yatra Foundation",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "angela-lusigi",
+      "name": "Angela Lusigi",
+      "title_role": "Resident Representative, UNDP India",
+      "role": "Resident Representative",
+      "org": "UNDP India",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "abhishek-kumar-singh",
+      "name": "Abhishek Kumar Singh",
+      "title_role": "Deputy Director General",
+      "role": "Deputy Director General",
+      "org": "",
+      "group": "government",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 3600,
+      "publish": false,
+      "note": "Organisation not shown on the site; confirm before publishing. The 3,600 searches a month for this name may belong to other people with the same name."
+    },
+    {
+      "slug": "vishal-dhupar",
+      "name": "Vishal Dhupar",
+      "title_role": "MD South Asia, NVIDIA",
+      "role": "Managing Director, South Asia",
+      "org": "NVIDIA",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "As Managing Director of South Asia at NVIDIA, Vishal Dhupar drives the adoption of accelerated computing and AI across India. Recognised among MIT Sloan India's Top 100 Tech Influencers, he contributes to leading organisations including CII and IDGS, and serves on the World Economic Forum's AI Advisory Council in India. A strong believer in AI for India, AI for All, he champions the use of AI to solve complex challenges across industries and fuel innovation at scale.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "sanjeev-rastogi",
+      "name": "Sanjeev Rastogi",
+      "title_role": "CEO GCC, Adani Group",
+      "role": "Chief Executive Officer, Global Capability Centre",
+      "org": "Adani Group",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Sanjeev Rastogi leads India's first multi-industry, multi-functional Global Capability Centre at Adani Group, setting a new benchmark for the future of business services. With a rich global background in global business services and organisational transformation, he has consistently driven large-scale change and delivered high-impact outcomes, blending operational excellence with innovation across geographies.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "ratan-kumar-kesh",
+      "name": "Ratan Kumar Kesh",
+      "title_role": "ED and COO, Bandhan Bank",
+      "role": "Executive Director and Chief Operating Officer",
+      "org": "Bandhan Bank",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Ratan Kumar Kesh brings nearly three decades of leadership experience across operations, technology, transaction and affluent banking, product, risk, governance, intelligent automation, digital, customer experience and organisational transformation. Since March 2023 he has served as Executive Director and COO at Bandhan Bank, overseeing technology, operations, customer experience, transformation, internal audit, recovery and support functions, and spearheaded the bank's IT transformation. He is recognised among India's top 50 quality professionals by the World Quality Congress and one of the top 25 emerging tech leaders by BIOCON Network and MeitY.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 90,
+      "publish": true
+    },
+    {
+      "slug": "shailesh-kumar",
+      "name": "Dr. Shailesh Kumar",
+      "title_role": "Chief Data Scientist, Reliance Jio",
+      "role": "Chief Data Scientist, Centre of Excellence in AI/ML",
+      "org": "Reliance Jio",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Dr. Shailesh Kumar is the Chief Data Scientist at Reliance Jio's Centre of Excellence in AI/ML, with over 20 international publications and more than 20 patents in AI and machine learning. Recognised among India's top 10 data scientists by Analytics India Magazine in 2015, he previously served as Vice President at Ola Cabs, was Chief Scientist and Co-Founder of Third Leap, an AI-driven personalised edtech startup, and contributed to AI research at Google in information retrieval, natural language understanding, computer vision, knowledge graphs and deep learning.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "arif-khan",
+      "name": "Arif Khan",
+      "title_role": "Chief Innovation Officer, Razorpay",
+      "role": "Chief Innovation Officer",
+      "org": "Razorpay",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "A seasoned leader with over 17 years of experience in the payments industry and digital channels, Arif Khan brings a strong track record of driving innovation and delivering impactful technology solutions. Before Razorpay he played pivotal roles at HDFC Bank, Mastercard and PwC, leading the development of transformative financial products and services, with deep expertise in large-scale digital transformation.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "debdoot-mukherjee",
+      "name": "Debdoot Mukherjee",
+      "title_role": "Chief Data Scientist, Meesho",
+      "role": "Chief Data Scientist; Head of AI and Demand Engineering",
+      "org": "Meesho",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Debdoot Mukherjee is a data science leader with over 14 years of experience spanning research, technical architecture and engineering management. As Chief Data Scientist at Meesho he leads the AI and Demand Engineering teams, driving innovations that turn data into scalable, intelligent products, with a focus on applying cutting-edge science to real-world problems in e-commerce and beyond.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "a-s-rajgopal",
+      "name": "A.S. Rajgopal",
+      "title_role": "CEO and MD, NxtGen Cloud Technologies",
+      "role": "Chief Executive Officer and Managing Director",
+      "org": "NxtGen Cloud Technologies",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "A.S. Rajgopal has over 11 years of experience leading NxtGen Datacenter, driving its vision, strategy and operations in India's cloud services industry, with a focus on scalable and sustainable cloud solutions for businesses and communities. As the founder of Multiverse Technologies he explores AI, cloud computing and IoT, integrating them to advance digital transformation and inclusive growth.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    },
+    {
+      "slug": "animesh-das",
+      "name": "Animesh Das",
+      "title_role": "MD and CEO",
+      "role": "Managing Director and Chief Executive Officer",
+      "org": "",
+      "group": "enterprise",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 480,
+      "publish": false,
+      "note": "Organisation not shown on the site; confirm before publishing."
+    },
+    {
+      "slug": "sharad-sharma",
+      "name": "Sharad Sharma",
+      "title_role": "Co-Founder, iSPIRT",
+      "role": "Co-Founder",
+      "org": "iSPIRT Foundation",
+      "group": "founders",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Sharad Sharma has three decades of experience across the internet, enterprise software and digital infrastructure markets and is a prominent voice in India's technology ecosystem. He co-founded the iSPIRT Foundation, a non-profit think tank dedicated to making India a product nation, held leadership roles at the NASSCOM Product Forum and Executive Council, co-founded Teltier Technologies (now part of Cisco), and is an active angel investor with over two dozen technology investments. He contributes to national policy and advisory bodies including the National Startup Advisory Council, SEBI's FinTech Committee, RBI's MSME Committee and the National Digital Payments Committee.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 90,
+      "publish": true
+    },
+    {
+      "slug": "prashant-pitti",
+      "name": "Prashant Pitti",
+      "title_role": "Co-Founder, EaseMyTrip",
+      "role": "Co-Founder and Executive Director, EaseMyTrip; Founder, Optimo Capital",
+      "org": "EaseMyTrip",
+      "group": "founders",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Prashant Pitti is the Co-Founder and Executive Director of EaseMyTrip and the Founder of Optimo Capital. Over 13 years he has combined entrepreneurial, management and financial expertise: ten years conceptualising ventures, building high-performing teams and raising funds, and three years in credit underwriting, marketing and finance.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 2900,
+      "publish": true
+    },
+    {
+      "slug": "vikalp-sahni",
+      "name": "Vikalp Sahni",
+      "title_role": "Founder and CEO, Eka Care",
+      "role": "Founder and CEO, Eka Care; former CTO and Co-Founder, Goibibo",
+      "org": "Eka Care",
+      "group": "founders",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": 170,
+      "publish": true
+    },
+    {
+      "slug": "shalini-kapoor",
+      "name": "Shalini Kapoor",
+      "title_role": "Chief Strategist, Data and AI, EkStep",
+      "role": "Chief Strategist, Data and AI",
+      "org": "EkStep Foundation",
+      "group": "founders",
+      "editions": [
+        "2025"
+      ],
+      "confirmed_2026": false,
+      "session": null,
+      "bio": "Shalini Kapoor is a technology strategist and innovator with over 28 years of experience applying AI and emerging technologies for sustainable growth. As Chief Strategist at EkStep Foundation she leads Data and AI initiatives across education, government, healthcare, agriculture and the non-profit sector. She previously led technology and strategic initiatives for AWS Asia Pacific and India Public Sector, was the first IBM Fellow from India, holds 15 patents, serves on the AI Advisory Board at the World Economic Forum, and is the author of AI for You: The New Game Changer.",
+      "photo": "",
+      "linkedin": "",
+      "search_demand_in": null,
+      "publish": true
+    }
+  ]
+}
