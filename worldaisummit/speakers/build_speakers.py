@@ -10,6 +10,14 @@ and writes:
   dist/build-report.md                what was built and what is missing
 
 No third-party dependencies. Run: python3 build_speakers.py [--out DIR] [--clean]
+
+Local preview (links point at your machine instead of the live site):
+
+  python3 build_speakers.py --clean --base-url http://localhost:8000
+  python3 -m http.server 8000 --directory dist
+  open http://localhost:8000/speakers/
+
+Rebuild without --base-url before uploading to the live site.
 """
 
 import argparse
@@ -520,9 +528,15 @@ def main():
     ap.add_argument("--data", default=str(ROOT / "speakers.json"))
     ap.add_argument("--out", default=str(ROOT / "dist"))
     ap.add_argument("--clean", action="store_true", help="delete the output folder first")
+    ap.add_argument("--base-url", default=None,
+                    help="override site.base_url, e.g. http://localhost:8000 for a local preview")
     args = ap.parse_args()
 
     data = json.loads(pathlib.Path(args.data).read_text(encoding="utf-8"))
+    preview = None
+    if args.base_url:
+        preview = args.base_url.rstrip("/")
+        data.setdefault("site", {})["base_url"] = preview
     errors, warnings = validate(data)
     if errors:
         print("ERRORS (nothing written):", file=sys.stderr)
@@ -604,6 +618,9 @@ def main():
     (out / "build-report.md").write_text("\n".join(rep), encoding="utf-8")
 
     print(f"Built {len(published)} speaker pages + index in {spk_dir}")
+    if preview:
+        print(f"PREVIEW BUILD: links, canonicals and sitemap point at {preview}. "
+              f"Rebuild without --base-url before uploading to the live site.")
     print(f"Sitemap: {out / 'sitemap-speakers.xml'}")
     print(f"Report:  {out / 'build-report.md'}")
     if skipped:

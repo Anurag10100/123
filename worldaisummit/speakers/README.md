@@ -31,6 +31,22 @@ duplicated or malformed, or a group id is unknown. Warnings (missing photo,
 confirmed speaker without a session) are printed and written to
 `dist/build-report.md`.
 
+## Preview on your own computer
+
+```bash
+git fetch origin claude/openseo-agent-setup-qjooi1
+git checkout claude/openseo-agent-setup-qjooi1
+cd worldaisummit/speakers
+python3 build_speakers.py --clean --base-url http://localhost:8000
+python3 -m http.server 8000 --directory dist
+```
+
+Then open <http://localhost:8000/speakers/> in a browser. The `--base-url`
+flag makes every link, canonical and sitemap entry point at your machine.
+Rebuild without it before uploading to the live site. On Windows use `python`
+instead of `python3`. Without git, download the branch as a ZIP from GitHub
+(Code -> Download ZIP on the branch) and run the same two commands.
+
 ## Adding or updating a speaker
 
 Add an object to the `speakers` array in `speakers.json`:
