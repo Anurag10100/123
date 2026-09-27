@@ -321,6 +321,15 @@ def bio_block(site, s):
     return f"<p>{esc(' '.join(parts))}</p>\n"
 
 
+def org_block(s):
+    if not s.get("org_about"):
+        return ""
+    return (f'      <section class="orgbox" aria-labelledby="org-h">\n'
+            f'        <h2 id="org-h">About {esc(s["org"])}</h2>\n'
+            f'        <p>{esc(s["org_about"])}</p>\n'
+            f'      </section>')
+
+
 def others_block(site, s, published):
     same = [o for o in published if o["group"] == s["group"] and o["slug"] != s["slug"]]
     rest = [o for o in published if o["group"] != s["group"]]
@@ -373,6 +382,8 @@ def speaker_ld(site, s, url, description):
         "worksFor": {"@type": "Organization", "name": s["org"]},
         "description": description,
     }
+    if s.get("org_about"):
+        person["worksFor"]["description"] = s["org_about"]
     if s.get("honorific"):
         person["honorificPrefix"] = s["honorific"]
     if suffix:
@@ -461,6 +472,7 @@ def render_speaker(tpl, site, s, published, common):
         "session_heading": heading,
         "session_html": session_html,
         "bio_html": bio_block(site, s),
+        "org_html": org_block(s),
         "others_html": others_block(site, s, published),
     })
     if s.get("photo"):
@@ -600,7 +612,9 @@ def main():
         t = page_title(site, s)
         rows.append({
             "slug": s["slug"], "name": s["name"], "url": url, "title_len": len(t), "desc_len": len(desc),
-            "bio": "yes" if s.get("bio") else "FALLBACK", "photo": "yes" if s.get("photo") else "none",
+            "bio": ("yes" if s.get("bio") else "FALLBACK") + (f" ({s['bio_confidence']})" if s.get("bio_confidence") else ""),
+            "org": "yes" if s.get("org_about") else "none",
+            "photo": "yes" if s.get("photo") else "none",
             "linkedin": "yes" if s.get("linkedin") else "none",
             "session": "yes" if (s.get("confirmed_2026") and s.get("session")) else "tba",
             "demand": s.get("search_demand_in"),
@@ -626,14 +640,14 @@ def main():
             rep.append(f"- {s.get('name', s.get('slug'))}: {s.get('note', 'publish is false')}")
         rep.append("")
     rep.append("## Pages")
-    rep.append("| Priority (India searches/mo) | Speaker | Bio | Photo | LinkedIn | Session | Title chars | Desc chars |")
-    rep.append("|---:|---|---|---|---|---|---:|---:|")
+    rep.append("| Priority (India searches/mo) | Speaker | Bio | Org blurb | Photo | LinkedIn | Session | Title chars | Desc chars |")
+    rep.append("|---:|---|---|---|---|---|---|---:|---:|")
     for r in sorted(rows, key=lambda r: -(r["demand"] or 0)):
         demand = "-" if r["demand"] is None else (f"{r['demand']} (shared name)" if r["shared"] else str(r["demand"]))
-        rep.append(f"| {demand} | [{r['name']}]({r['url']}) | {r['bio']} | "
+        rep.append(f"| {demand} | [{r['name']}]({r['url']}) | {r['bio']} | {r['org']} | "
                    f"{r['photo']} | {r['linkedin']} | {r['session']} | {r['title_len']} | {r['desc_len']} |")
     rep.append("")
-    missing_bio = [r["name"] for r in rows if r["bio"] == "FALLBACK"]
+    missing_bio = [r["name"] for r in rows if r["bio"].startswith("FALLBACK")]
     missing_photo = [r["name"] for r in rows if r["photo"] == "none"]
     rep.append("## To collect before or soon after publishing")
     rep.append(f"- Bios missing ({len(missing_bio)}): " + (", ".join(missing_bio) if missing_bio else "none"))
