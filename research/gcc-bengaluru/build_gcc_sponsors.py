@@ -13,6 +13,8 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
+from outreach import build_outreach
+
 OUT = Path(__file__).with_name("bengaluru_gcc_events_sponsors.xlsx")
 
 # id, event, organiser, edition, date, venue, status, website, sponsors_page, notes
@@ -334,6 +336,9 @@ def main():
     for i in range(2, len(rows) + 2):
         ws.cell(i, 2).alignment = Alignment(horizontal="center", vertical="top")
 
+    outreach = build_outreach(wb, EVENTS, SPONSORS, CANON, write_table)
+    wb.active = 0
+
     ws = wb.create_sheet("Notes")
     notes = [
         "Bengaluru GCC events and sponsors - researched 30 Sep 2026",
@@ -347,6 +352,16 @@ def main():
         "to check the logo wall.",
         "'# sponsors found' and '# events sponsored' are fixed counts from the build script; re-run "
         "build_gcc_sponsors.py after editing the data to refresh them.",
+        "",
+        "OUTREACH SHEET - how to use:",
+        "Priority: A - Hot / B - Warm / C - Nurture, from Score = best tier (Presenting/Platinum 5, Gold/Strategic 3, "
+        "Silver/Associate 2, other 1) + 3 per extra GCC event sponsored + 2 if they sponsored in 2026 - 2 if the "
+        "sponsorship is unconfirmed. 'Partner only' = government, media or academic partners (in-kind, not paid).",
+        "Category, 'Who to contact' and 'Pitch angle' are suggestions, not researched facts.",
+        "Fill in the pale-yellow columns (Contact name to Next step). Status has a dropdown. Example: "
+        "Contact name 'Priya Sharma', Designation 'Head of Marketing India', Status 'Contacted', "
+        "Next step 'Send deck on Mon'.",
+        "No contact names, emails or phones are included yet - these need Lusha or Clay (uses credits).",
         "",
         "Not included (not Bengaluru or not GCC-specific): Nasscom GCC Summit 2025 (Hyderabad) and 2026 (Mumbai); "
         "GCC XL Summit 2026 (Hyderabad); MachineCon GCC (Goa); ETGCCWorld SURGE (Kerala); AIGCC '26 (Chennai); "
@@ -362,7 +377,7 @@ def main():
         c.alignment = Alignment(wrap_text=True, vertical="top")
 
     wb.save(OUT)
-    print(f"{OUT}: {n_ev} events, {n_sp} sponsor rows, {len(ordered)} companies")
+    print(f"{OUT}: {len(outreach)} outreach rows, {n_ev} events, {n_sp} sponsor rows, {len(ordered)} companies")
 
 
 if __name__ == "__main__":
