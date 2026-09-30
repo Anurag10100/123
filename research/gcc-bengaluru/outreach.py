@@ -68,6 +68,17 @@ for cat, names in {
 }.items():
     for n in names:
         CATEGORY[n] = cat
+# Resolved by the free web enrichment (see enrichment.json "what_they_do").
+CATEGORY.update({
+    "Everpure": "Hardware & infrastructure", "Everforth": "IT services & engineering",
+    "Zertain India": "IT services & engineering", "3R Infotech": "IT services & engineering",
+    "Infogini Consulting": "IT services & engineering", "RST Solutions": "IT services & engineering",
+    "Syncortex": "IT services & engineering", "Vidushi Infotech": "IT services & engineering",
+    "FlexTecs": "Software, SaaS & AI", "Mandaala": "Employee benefits, wellness & services",
+    "Famli": "Employee benefits, wellness & services", "Peregrine": "Employee benefits, wellness & services",
+    "Ingenious": "Real estate & workspace", "EduTech": "Talent, staffing & learning",
+    "ACT Enterprise": "Hardware & infrastructure",
+})
 OTHER = "Other - check what they do"
 NON_SPONSOR = ("partner, not sponsor",)
 
