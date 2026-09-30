@@ -7,7 +7,19 @@ researched facts; the Outreach sheet says so. Priority score:
   + 2 if they sponsored a 2026 event
   - 2 if every row for the company is an inferred (unconfirmed) one
 """
+import json
+from pathlib import Path
+
 from openpyxl.worksheet.datavalidation import DataValidation
+
+ENRICH_FILE = Path(__file__).with_name("enrichment.json")
+
+
+def load_enrichment():
+    """Free web enrichment (company site, public contact) keyed by company name."""
+    if not ENRICH_FILE.exists():
+        return {}
+    return {r["company"]: r for r in json.loads(ENRICH_FILE.read_text())}
 
 CATEGORY = {}
 for cat, names in {
@@ -124,8 +136,12 @@ def build_outreach(wb, events, sponsors, canon, write_table):
     for eid, tier, name, ver in sponsors:
         by_co.setdefault(canon.get(name, name), []).append((eid, tier, ver))
 
+    enrich = load_enrichment()
     rows = []
     for co, hits in by_co.items():
+        e = enrich.get(co, {})
+        g = lambda k: (e.get(k) or "").strip()
+        src = " | ".join(x for x in (g("contact_source_url"), g("public_email_source"), g("public_phone_source")) if x)
         cat = CATEGORY.get(co, OTHER)
         eids = sorted({h[0] for h in hits})
         best = max(hits, key=lambda h: tier_points(h[1]))
@@ -139,19 +155,24 @@ def build_outreach(wb, events, sponsors, canon, write_table):
         history = "; ".join(f"{ev[e][1]} ({ev[e][4]}) - {t}" for e, t, _ in sorted(hits))
         latest = max(eids, key=lambda e: ("2026" in ev[e][4], e))
         who, angle = ANGLE[cat]
-        rows.append([prio, score, co, cat, len(eids), best[1], ev[latest][4], history, who, angle,
-                     "Yes" if all_inferred else "", "", "", "", "", "", "Not contacted", "", ""])
+        rows.append([prio, score, co, cat, g("what_they_do"), g("website"), g("india_hq_city"),
+                     len(eids), best[1], ev[latest][4], history, who, angle,
+                     "Yes" if all_inferred else "",
+                     g("contact_name"), g("contact_title"), g("contact_linkedin_url"), g("public_email"),
+                     g("public_phone"), src, g("confidence"), "Not contacted", "", g("notes")])
 
     order = {"A - Hot": 0, "B - Warm": 1, "C - Nurture": 2, "Partner only": 3}
     rows.sort(key=lambda r: (order[r[0]], -r[1], r[2].lower()))
 
     ws = wb.create_sheet("Outreach", 0)
-    headers = ["Priority", "Score", "Company", "Category", "# GCC events sponsored", "Best tier seen",
-               "Latest event date", "Sponsorship history (event - tier)", "Who to contact (roles)",
-               "Pitch angle", "Sponsorship unconfirmed?", "Contact name", "Designation", "Email", "Phone",
-               "LinkedIn URL", "Status", "Owner", "Next step / notes"]
-    widths = [12, 7, 34, 26, 10, 26, 14, 70, 40, 55, 12, 22, 22, 28, 16, 30, 16, 14, 30]
-    write_table(ws, "Outreach", headers, rows, widths)
+    headers = ["Priority", "Score", "Company", "Category", "What they do", "Website", "India base",
+               "# GCC events sponsored", "Best tier seen", "Latest event date",
+               "Sponsorship history (event - tier)", "Who to contact (roles)", "Pitch angle",
+               "Sponsorship unconfirmed?", "Contact name (public source)", "Designation", "LinkedIn URL",
+               "Published email (company/general)", "Published phone", "Contact source URL(s)",
+               "Contact confidence", "Status", "Owner", "Research notes / next step"]
+    widths = [12, 7, 30, 24, 36, 26, 14, 10, 24, 14, 60, 36, 50, 11, 24, 30, 34, 28, 18, 40, 11, 16, 14, 40]
+    write_table(ws, "Outreach", headers, rows, widths, link_cols=(6, 17, 20))
 
     fills = {"A - Hot": "F8CBAD", "B - Warm": "FFE699", "C - Nurture": "DDEBF7", "Partner only": "E7E6E6"}
     from openpyxl.styles import PatternFill, Font
@@ -159,10 +180,10 @@ def build_outreach(wb, events, sponsors, canon, write_table):
         p = ws.cell(r, 1)
         p.fill = PatternFill("solid", start_color=fills[p.value])
         p.font = Font(name="Arial", size=10, bold=True)
-        for c in range(12, 20):
+        for c in range(15, 25):
             ws.cell(r, c).fill = PatternFill("solid", start_color="FFFFF2")
     dv = DataValidation(type="list", formula1='"' + ",".join(STATUSES) + '"', allow_blank=True)
     ws.add_data_validation(dv)
-    dv.add(f"Q2:Q{ws.max_row}")
+    dv.add(f"V2:V{ws.max_row}")
     ws.freeze_panes = "D2"
     return rows

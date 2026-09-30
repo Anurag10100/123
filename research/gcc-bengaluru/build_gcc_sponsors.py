@@ -358,10 +358,12 @@ def main():
         "Silver/Associate 2, other 1) + 3 per extra GCC event sponsored + 2 if they sponsored in 2026 - 2 if the "
         "sponsorship is unconfirmed. 'Partner only' = government, media or academic partners (in-kind, not paid).",
         "Category, 'Who to contact' and 'Pitch angle' are suggestions, not researched facts.",
-        "Fill in the pale-yellow columns (Contact name to Next step). Status has a dropdown. Example: "
-        "Contact name 'Priya Sharma', Designation 'Head of Marketing India', Status 'Contacted', "
-        "Next step 'Send deck on Mon'.",
-        "No contact names, emails or phones are included yet - these need Lusha or Clay (uses credits).",
+        "Contact columns were filled by free web research only (company sites, press releases, LinkedIn posts, "
+        "event pages) - no Lusha or Clay credits. Every named contact has a source URL; check the person is still "
+        "in the role before writing. Emails/phones are only ones the company publishes (often general or media "
+        "lines) - none were guessed. Personal emails and direct phones need Lusha/Clay (credits).",
+        "Pale-yellow columns are for your team: update Status (dropdown), Owner and notes. Example: Status "
+        "'Contacted', Owner 'Anurag', note 'Sent deck 2 Oct, follow up 9 Oct'.",
         "",
         "Not included (not Bengaluru or not GCC-specific): Nasscom GCC Summit 2025 (Hyderabad) and 2026 (Mumbai); "
         "GCC XL Summit 2026 (Hyderabad); MachineCon GCC (Goa); ETGCCWorld SURGE (Kerala); AIGCC '26 (Chennai); "
