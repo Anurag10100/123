@@ -14,6 +14,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
 from contacts import build_contacts
+from logo_wall import build_logo_wall
 from outreach import build_outreach
 
 OUT = Path(__file__).with_name("bengaluru_gcc_events_sponsors.xlsx")
@@ -340,6 +341,7 @@ def main():
 
     outreach = build_outreach(wb, EVENTS, SPONSORS, CANON, write_table)
     contact_rows = build_contacts(wb, outreach, [c.value for c in wb["Consolidated Outreach"][1]], write_table)
+    build_logo_wall(wb, write_table)
     wb.active = 0
 
     ws = wb.create_sheet("Notes")
@@ -397,7 +399,7 @@ def main():
     from openpyxl import load_workbook
     solo = load_workbook(OUT)
     for name in solo.sheetnames:
-        if name not in ("Contacts", "Consolidated Outreach", "Notes"):
+        if name not in ("Contacts", "New Prospects (logo wall)", "Consolidated Outreach", "Notes"):
             del solo[name]
     solo.save(OUT_OUTREACH)
     print(f"{OUT}: {len(contact_rows)} contact rows, {len(outreach)} outreach rows, {n_ev} events, {n_sp} sponsor rows, {len(ordered)} companies")
