@@ -20,7 +20,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Ambiguous name; picked the AI advisory firm (illuminaticonsulting.ai), not Illuminati Technology (AML software) or Illuminati AI (Mumbai)"
+   "notes": ""
   },
   {
    "company": "Geektrust",
@@ -31,7 +31,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "NOT RUN: Lusha contact search was blocked by the Claude Code permission classifier (PII data handling). Needs user approval."
+   "notes": ""
   },
   {
    "company": "TeleCMI",
@@ -64,7 +64,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Not searched: Lusha prospecting_contact_search call was denied by the auto-mode permission classifier (PII Data Handling). Needs user approval."
+   "notes": ""
   },
   {
    "company": "TIH Foundation for IoT & IoE (IIT Bombay)",
@@ -97,7 +97,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Lusha search for graidtech.com was denied by the Claude Code permission classifier (PII Data Handling); not searched"
+   "notes": "No India contacts in Lusha"
   },
   {
    "company": "Hai.data",
@@ -108,7 +108,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "NOT RUN: Lusha contact search was blocked by the Claude Code permission classifier (PII data handling). Needs user approval."
+   "notes": ""
   },
   {
    "company": "Temporal",
@@ -119,7 +119,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Not searched: Lusha prospecting_contact_search call was denied by the auto-mode permission classifier (PII Data Handling). Needs user approval."
+   "notes": ""
   },
   {
    "company": "Intugle",
@@ -130,7 +130,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Not searched: Lusha prospecting search for intugle.ai was blocked by the session permission classifier (PII data handling). Needs user approval to retry."
+   "notes": ""
   },
   {
    "company": "Murf.ai",
@@ -163,7 +163,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "INCOMPLETE: domain netralabs.ai + IN + Marketing/Sales returned 0. The fallbacks (no departments, then company name) were not run because other searches in this batch were blocked for PII handling."
+   "notes": "No India contacts in Lusha"
   },
   {
    "company": "Jupitice",
@@ -273,7 +273,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "INCOMPLETE: domain chariot.in + IN + Marketing/Sales returned 0. The fallbacks (no departments, then company name) were not run because other searches in this batch were blocked for PII handling."
+   "notes": "No India contacts in Lusha"
   },
   {
    "company": "CloudPe",
@@ -284,7 +284,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Lusha returned 10 India Marketing/Sales contacts, all junior (content writer, demand gen associate/specialist/manager, inside sales reps/executives, inbound marketing specialist). No senior picks; no-department retry not run since results were non-zero."
+   "notes": "Only junior people in Lusha"
   },
   {
    "company": "CloudYali",
@@ -295,7 +295,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Not searched: Lusha prospecting search for cloudyali.io was blocked by the session permission classifier (PII data handling). Needs user approval to retry."
+   "notes": ""
   },
   {
    "company": "Cogbolt AI",
@@ -317,7 +317,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "NOT RUN: Lusha contact search was blocked by the Claude Code permission classifier (PII data handling). Needs user approval."
+   "notes": ""
   },
   {
    "company": "Dataoids",
@@ -328,7 +328,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Lusha returned 2 India Marketing/Sales contacts (Marketing Analyst, Account Manager), both excluded as junior. No senior picks."
+   "notes": "Only junior people in Lusha"
   },
   {
    "company": "Agora",
@@ -339,7 +339,7 @@
    "hubspot_contacts": "",
    "hubspot_last_contacted": "",
    "hubspot_company_id": "",
-   "notes": "Not searched: Lusha prospecting search for agora.io was blocked by the session permission classifier (PII data handling). Needs user approval to retry."
+   "notes": ""
   },
   {
    "company": "Diligent",
@@ -387,116 +387,6 @@
   }
  ],
  "contacts": [
-  {
-   "company": "Illuminati Consulting",
-   "name": "Moumita Sarker",
-   "title": "Founder, Chief Executive Officer",
-   "role_group": "Leadership",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/moumitasarkervp",
-   "location": "Mumbai, India",
-   "note": "Lusha has a phone on file (5 credits); enrich step denied by permission classifier, not revealed"
-  },
-  {
-   "company": "Illuminati Consulting",
-   "name": "Kaushik Agate",
-   "title": "Head of Business",
-   "role_group": "Leadership",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/kaushik-agate-25305876",
-   "location": "Pune, Maharashtra, India",
-   "note": "Lusha has an email on file (0 credits); enrich step denied by permission classifier, not revealed"
-  },
-  {
-   "company": "Zeliot",
-   "name": "Sachin Kamath",
-   "title": "Associate Vice President of Design and Marketing",
-   "role_group": "Marketing",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/sachin-kamath",
-   "location": "Bengaluru, Karnataka, India",
-   "note": "Lusha has email and phone on file; enrich step denied by permission classifier, not revealed"
-  },
-  {
-   "company": "Zeliot",
-   "name": "Ganesha Upadhya",
-   "title": "Vice President of Sales and Marketing",
-   "role_group": "Sales",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/ganesha-upadhya-a0a8b210",
-   "location": "Bengaluru, Karnataka, India",
-   "note": "Lusha has a phone on file (no email); enrich step denied by permission classifier, not revealed"
-  },
-  {
-   "company": "Beige Bananas",
-   "name": "Vedika Mehrotra",
-   "title": "Associate Director of Growth",
-   "role_group": "Marketing",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/mehrotrav",
-   "location": "Delhi, India",
-   "note": "Lusha has an email on file (no phone); enrich step denied by permission classifier, not revealed"
-  },
-  {
-   "company": "Cogbolt AI",
-   "name": "Mohit Choudhary",
-   "title": "Founder",
-   "role_group": "Leadership",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/mohit-choudhary-2b890016b",
-   "location": "Rajasthan, India",
-   "note": "Lusha has email and phone on file; enrich step denied by permission classifier, not revealed"
-  },
-  {
-   "company": "Relanto",
-   "name": "Ankur Pahariya",
-   "title": "Head of Marketing Communications",
-   "role_group": "Marketing",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/ankur-pahariya-5a7b5014",
-   "location": "Bengaluru, Karnataka, India",
-   "note": "Lusha has email and phone on file; enrich step denied by permission classifier, not revealed"
-  },
-  {
-   "company": "Jupitice",
-   "name": "Neeraj G",
-   "title": "Head of Digital Marketing",
-   "role_group": "Marketing",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/neeraj-kumar-guleri",
-   "location": "Chandigarh, India",
-   "note": "Lusha id v1.d3ZRXv2vF-9ZK0FoQObhZ96fJ34lHQbOw10; email+phone revealable but enrich call was denied by the permission classifier (PII Data Handling), so not revealed."
-  },
-  {
-   "company": "Jupitice",
-   "name": "Jasdeep Singh",
-   "title": "Director of Strategy, Tie Up and Content",
-   "role_group": "Marketing",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/jasdeep12",
-   "location": "Chandigarh, India",
-   "note": "Lusha id v1.iXsNl75q8wjKjG4LS-upUR9szYDnySpQww; phone revealable (no email in Lusha); enrich call denied by permission classifier, not revealed."
-  },
-  {
-   "company": "Jupitice",
-   "name": "Chetna Chanchal",
-   "title": "Senior Sales Manager",
-   "role_group": "Sales",
-   "email": "",
-   "phone": "",
-   "linkedin": "https://www.linkedin.com/in/chetna-chanchal",
-   "location": "India",
-   "note": "Lusha id v1.4_WzZbmLAUocl__iQrJv0C4TmKwhl-7wEw; phone revealable (no email in Lusha); enrich call denied by permission classifier, not revealed."
-  },
   {
    "company": "KPI Partners",
    "name": "Suryakant Dwivedi",
@@ -562,6 +452,215 @@
    "linkedin": "https://www.linkedin.com/in/sneha-sahu-3a51b117a",
    "location": "Mahārāshtra, India",
    "note": "Lusha A+ work email; mobile + direct line"
+  },
+  {
+   "company": "Jupitice",
+   "name": "Neeraj Kumar G",
+   "title": "Head of Digital Marketing",
+   "role_group": "Marketing",
+   "email": "neeraj.kumar@jupitice.com",
+   "phone": "+91 70180 59337",
+   "linkedin": "https://www.linkedin.com/in/neeraj-kumar-guleri",
+   "location": "Chandigarh",
+   "note": ""
+  },
+  {
+   "company": "Jupitice",
+   "name": "Jasdeep Singh",
+   "title": "Deputy Director of Trade Fairs, CII",
+   "role_group": "Marketing",
+   "email": "jasdeep.singh@cii.in",
+   "phone": "+91 98153 09727",
+   "linkedin": "https://www.linkedin.com/in/jasdeep12",
+   "location": "Chandigarh",
+   "note": "CHECK: Lusha now shows him at Confederation of Indian Industry, not Jupitice"
+  },
+  {
+   "company": "Jupitice",
+   "name": "Chetna Chanchal",
+   "title": "Head of Sales, AKIRHS Software",
+   "role_group": "Sales",
+   "email": "",
+   "phone": "+91 88003 75685 (mobile); +91 89206 24576",
+   "linkedin": "https://www.linkedin.com/in/chetna-chanchal",
+   "location": "India",
+   "note": "CHECK: Lusha now shows her at AKIRHS Software Solutions, not Jupitice"
+  },
+  {
+   "company": "Illuminati Consulting",
+   "name": "Moumita Sarker",
+   "title": "Founder & CEO",
+   "role_group": "Leadership",
+   "email": "",
+   "phone": "+91 98923 26938; +91 73852 35441",
+   "linkedin": "https://www.linkedin.com/in/moumitasarkervp",
+   "location": "Mumbai",
+   "note": "Ex-Deloitte Partner"
+  },
+  {
+   "company": "Illuminati Consulting",
+   "name": "Kaushik Agate",
+   "title": "Head of Business",
+   "role_group": "Leadership",
+   "email": "kaushik.agate@illuminaticonsulting.ai",
+   "phone": "",
+   "linkedin": "https://www.linkedin.com/in/kaushik-agate-25305876",
+   "location": "Pune",
+   "note": ""
+  },
+  {
+   "company": "Zeliot",
+   "name": "Sachin Kamath",
+   "title": "AVP, Design & Marketing",
+   "role_group": "Marketing",
+   "email": "sachin@zeliot.in",
+   "phone": "+91 91084 63211",
+   "linkedin": "https://www.linkedin.com/in/sachin-kamath",
+   "location": "Bengaluru",
+   "note": ""
+  },
+  {
+   "company": "Zeliot",
+   "name": "Ganesha Upadhya",
+   "title": "VP Sales & Marketing",
+   "role_group": "Sales",
+   "email": "ganesha@mapmyindia.com",
+   "phone": "+91 76248 77651",
+   "linkedin": "https://www.linkedin.com/in/ganesha-upadhya-a0a8b210",
+   "location": "Bengaluru",
+   "note": "CHECK: email is on previous employer domain (MapmyIndia)"
+  },
+  {
+   "company": "Beige Bananas",
+   "name": "Vedika Mehrotra",
+   "title": "Associate Director of Growth",
+   "role_group": "Marketing",
+   "email": "vedika.m@beigebananas.com",
+   "phone": "",
+   "linkedin": "https://www.linkedin.com/in/mehrotrav",
+   "location": "Delhi",
+   "note": ""
+  },
+  {
+   "company": "Cogbolt AI",
+   "name": "Mohit Choudhary",
+   "title": "Founder",
+   "role_group": "Leadership",
+   "email": "mohit.choudhary@cogbolt.ai",
+   "phone": "+91 97833 45667",
+   "linkedin": "https://www.linkedin.com/in/mohit-choudhary-2b890016b",
+   "location": "Rajasthan",
+   "note": ""
+  },
+  {
+   "company": "Relanto",
+   "name": "Ankur Pahariya",
+   "title": "Head of Marketing Communications",
+   "role_group": "Marketing",
+   "email": "ankur.pahariya@relanto.ai",
+   "phone": "+91 96115 04333",
+   "linkedin": "https://www.linkedin.com/in/ankur-pahariya-5a7b5014",
+   "location": "Bengaluru",
+   "note": ""
+  },
+  {
+   "company": "Temporal",
+   "name": "Ayush Asthana",
+   "title": "Account Director",
+   "role_group": "Sales",
+   "email": "ayush.asthana@temporal.io",
+   "phone": "+91 98705 90476",
+   "linkedin": "https://www.linkedin.com/in/asthanaayush",
+   "location": "Bengaluru",
+   "note": ""
+  },
+  {
+   "company": "Temporal",
+   "name": "Rohit Nath",
+   "title": "Director of Enterprise Accounts, Confluent",
+   "role_group": "Sales",
+   "email": "rohit.nath@temporal.io",
+   "phone": "+91 63602 87479",
+   "linkedin": "https://www.linkedin.com/in/nathrohit",
+   "location": "Bengaluru",
+   "note": "CHECK: Lusha now shows him at Confluent (rnath@confluent.io); may have left Temporal"
+  },
+  {
+   "company": "Cognite",
+   "name": "Ravi Narayan Mishra",
+   "title": "Senior Director of Sales",
+   "role_group": "Sales",
+   "email": "ravi.mishra@cognite.com",
+   "phone": "+91 120 389 8788 (direct); +65 9773 5073",
+   "linkedin": "https://www.linkedin.com/in/ravi-narayan-mishra-41562516",
+   "location": "Delhi",
+   "note": ""
+  },
+  {
+   "company": "Agora",
+   "name": "Vaibhav Singhal",
+   "title": "Senior Marketing Manager (APAC)",
+   "role_group": "Marketing",
+   "email": "vaibhav@agora.io",
+   "phone": "+91 75489 05060",
+   "linkedin": "https://www.linkedin.com/in/vaibhav-s-94639b23",
+   "location": "Delhi",
+   "note": "Lusha record last updated Nov 2024"
+  },
+  {
+   "company": "Geektrust",
+   "name": "Krishnan Nair",
+   "title": "CEO & Co-Founder",
+   "role_group": "Leadership",
+   "email": "krishnan@geektrust.in",
+   "phone": "+91 96322 02750",
+   "linkedin": "https://www.linkedin.com/in/nairkrishnan",
+   "location": "Bengaluru",
+   "note": ""
+  },
+  {
+   "company": "InXiteOut",
+   "name": "Shounak Das",
+   "title": "Co-Founder & CEO",
+   "role_group": "Leadership",
+   "email": "shounak.das@inxiteout.ai",
+   "phone": "+91 99209 22163",
+   "linkedin": "https://www.linkedin.com/in/shounak-das-inxiteout",
+   "location": "Bengaluru",
+   "note": ""
+  },
+  {
+   "company": "Intugle",
+   "name": "Jaskaran Singh",
+   "title": "Co-Founder, Chief Data Scientist",
+   "role_group": "Leadership",
+   "email": "jaskaran@intugle.ai",
+   "phone": "+1 309-750-2584 (US)",
+   "linkedin": "https://www.linkedin.com/in/jaskaran-singh-879192a1",
+   "location": "India",
+   "note": ""
+  },
+  {
+   "company": "CloudYali",
+   "name": "Nishant Thorat",
+   "title": "Founder",
+   "role_group": "Leadership",
+   "email": "nishant@cloudyali.io",
+   "phone": "+91 97011 33649",
+   "linkedin": "https://www.linkedin.com/in/nishantthorat",
+   "location": "Maharashtra",
+   "note": ""
+  },
+  {
+   "company": "Hai.data",
+   "name": "Santhosh Muralidharan",
+   "title": "Founder",
+   "role_group": "Leadership",
+   "email": "santhosh@haidata.ai",
+   "phone": "+91 98452 42341",
+   "linkedin": "https://www.linkedin.com/in/santhoshmuralidharan",
+   "location": "Bengaluru",
+   "note": ""
   }
  ]
 }

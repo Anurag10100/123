@@ -1,4 +1,4 @@
-"""'New Prospects (logo wall)' tab: companies from a sponsor logo wall the user shared
+"""Standalone workbook for the companies on a sponsor logo wall the user shared
 (1 Oct 2026), their HubSpot status, and senior contacts found in Lusha for the ones
 Elets has not tapped yet."""
 import json
@@ -41,7 +41,7 @@ def build_logo_wall(wb, write_table):
                                 p.get("phone", ""), p.get("linkedin", ""), p.get("location", "")] + crm +
                         ["Not contacted", "", p.get("note", "")])
 
-    ws = wb.create_sheet("New Prospects (logo wall)", 1)
+    ws = wb.create_sheet("Logo Wall Prospects", 0)
     headers = ["HubSpot status", "Company", "What they do", "Website", "Contact name", "Designation",
                "Role group", "Email", "Phone", "LinkedIn", "Location", "HubSpot owner", "HubSpot contacts",
                "HubSpot last contacted", "HubSpot link", "Status", "Elets owner", "Notes"]
@@ -60,3 +60,31 @@ def build_logo_wall(wb, write_table):
     dv.add(f"P2:P{ws.max_row}")
     ws.freeze_panes = "C2"
     return rows
+
+
+OUT = Path(__file__).with_name("Logo_Wall_Prospects.xlsx")
+
+
+def main():
+    from openpyxl import Workbook
+    from build_gcc_sponsors import write_table
+    wb = Workbook()
+    default = wb.active
+    rows = build_logo_wall(wb, write_table)
+    wb.remove(default)
+    notes = wb.create_sheet("Notes")
+    for i, t in enumerate([
+            "Logo wall prospects - 35 companies from the sponsor logo wall shared on 1 Oct 2026.",
+            "HubSpot status: Untapped = not in HubSpot; In CRM, cold = in HubSpot but never contacted / not in 90 days; "
+            "Tapped = contacted in the last 90 days (no Lusha search run for these).",
+            "Contacts are senior Marketing / Sales / Leadership people in India from Lusha (about 100 credits used). "
+            "Rows marked CHECK in Notes may have moved company - verify before outreach.",
+            "Not identified from the image: a black teardrop-icon logo with no name, and a 'Raw Data to AI' wordmark."], 1):
+        notes.cell(i, 1, t)
+    notes.column_dimensions["A"].width = 130
+    wb.save(OUT)
+    print(f"{OUT}: {len(rows)} rows")
+
+
+if __name__ == "__main__":
+    main()
