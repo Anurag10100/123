@@ -192,6 +192,11 @@ def next_action(crm, has_contact):
     return f"In CRM, cold ({d} days) - re-engage"
 
 
+# Companies the user asked to leave out of the outreach list (1 Oct 2026).
+EXCLUDED_COMPANIES = {"Infosys", "PwC India", "Accenture", "State Bank of India", "Freshworks",
+                      "IDFC FIRST Bank", "RBL Bank"}
+
+
 def build_outreach(wb, events, sponsors, canon, write_table):
     ev = {e[0]: e for e in events}
     by_co = {}
@@ -202,6 +207,8 @@ def build_outreach(wb, events, sponsors, canon, write_table):
     crm_all = load_crm()
     rows = []
     for co, hits in by_co.items():
+        if co in EXCLUDED_COMPANIES:
+            continue
         e = enrich.get(co, {})
         g = lambda k: (e.get(k) or "").strip()
         src = " | ".join(x for x in (g("contact_source_url"), g("public_email_source"), g("public_phone_source")) if x)

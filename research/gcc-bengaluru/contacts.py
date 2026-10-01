@@ -25,6 +25,37 @@ KEY_ROLE = re.compile(r"market|brand|event|communicat|cmo|alliance|partnership|s
                       re.I)
 
 
+# Only senior marketing, sales or leadership people are kept (user request, 1 Oct 2026).
+MARKETING = re.compile(r"market|brand|event|communicat|\bpr\b|public relations|\bcmo\b|demand gen|growth|content|"
+                       r"digital|go-to-market|\bgtm\b|media|corporate affairs|sponsor", re.I)
+SALES = re.compile(r"sales|business development|\bbd\b|revenue|\bcro\b|account|alliance|partnership|client|"
+                   r"commercial|enterprise business|customer acquisition|\bgcc\b", re.I)
+LEADERSHIP = re.compile(r"\bceo\b|chief executive|founder|managing director|\bmd\b|country (head|manager)|"
+                        r"\bpresident\b|general manager|\bgm\b|india head|head of india|site lead|cent(er|re) head|"
+                        r"business head|\bcoo\b|managing partner|\bpartner\b(?! ?(manager|executive|success))", re.I)
+SENIOR = re.compile(r"head|director|\b(a|s|e)?vp\b|vice president|chief|\bc[a-z]o\b|president|partner|founder|"
+                    r"\bmd\b|general manager|\bgm\b|country manager|leader|\blead\b|senior manager|sr\.? ?manager|"
+                    r"principal", re.I)
+JUNIOR = re.compile(r"intern|trainee|apprentice|fresher|student|junior|\bjr\b|analyst|coordinator|specialist|"
+                    r"representative|\bassociate\b(?! ?(vice|director|partner))|"
+                    r"\bexecutive\b(?! ?(director|vice|officer|chairman|president))|"
+                    r"\bassistant\b(?! ?(vice|general))|team lead", re.I)
+
+
+def role_group(title):
+    """'Marketing' / 'Sales' / 'Leadership' for senior people in those roles, else ''."""
+    t = title or ""
+    if not t or JUNIOR.search(t):
+        return ""
+    if MARKETING.search(t) and SENIOR.search(t):
+        return "Marketing"
+    if SALES.search(t) and SENIOR.search(t):
+        return "Sales"
+    if LEADERSHIP.search(t):
+        return "Leadership"
+    return ""
+
+
 def _norm(s):
     return re.sub(r"[^a-z]", "", (s or "").lower())
 
@@ -94,17 +125,18 @@ def build_contacts(wb, outreach_rows, outreach_headers, write_table):
         elif not pub and (get(r, "Published email (company/general)") or get(r, "Published phone")):
             people.append(["(company general line)", "", get(r, "Published email (company/general)"),
                            get(r, "Published phone"), "", "", "Company website", "", "", ""])
+        people = [p for p in people if role_group(p[1])]
         if not people:
-            people.append(["- no contact found yet -", "", "", "", "", "", "", "", "", ""])
-        people.sort(key=lambda p: (not (p[6].startswith(("HubSpot", "Lusha", "Elets", "Public"))),
-                                   not KEY_ROLE.search(p[1] or ""), not p[2], p[0].lower()))
+            people.append(["- no senior marketing/sales contact found -", "", "", "", "", "", "", "", "", ""])
+        order = {"Marketing": 0, "Sales": 1, "Leadership": 2, "": 3}
+        people.sort(key=lambda p: (order[role_group(p[1])], not p[2], p[0].lower()))
         for p in people:
-            rows.append([prio, co] + p[:6] + [bool(KEY_ROLE.search(p[1] or "")) and "Yes" or ""] + p[6:10] +
+            rows.append([prio, co] + p[:6] + [role_group(p[1])] + p[6:10] +
                         company + ["Not contacted", "", p[10] if len(p) > 10 else ""])
 
     ws = wb.create_sheet("Contacts", 0)
     headers = ["Priority", "Company", "Contact name", "Designation", "Email", "Phone", "Mobile", "LinkedIn",
-               "Marketing / events role?", "Contact source", "HubSpot contact owner", "Last contacted (HubSpot)",
+               "Role group", "Contact source", "HubSpot contact owner", "Last contacted (HubSpot)",
                "HubSpot / source link", "Company next action", "Category", "# GCC events sponsored",
                "Best tier seen", "Sponsorship history (event - tier)", "Website", "Pitch angle",
                "Status", "Elets owner", "Notes"]
@@ -117,7 +149,7 @@ def build_contacts(wb, outreach_rows, outreach_headers, write_table):
         p.fill = PatternFill("solid", start_color=fills[p.value])
         p.font = Font(name="Arial", size=10, bold=True)
         ws.cell(i, 3).font = Font(name="Arial", size=10, bold=True)
-        if ws.cell(i, 9).value == "Yes":
+        if ws.cell(i, 9).value == "Marketing":
             ws.cell(i, 9).fill = PatternFill("solid", start_color="E2EFDA")
         for c in range(21, 24):
             ws.cell(i, c).fill = PatternFill("solid", start_color="FFFFF2")
