@@ -70,7 +70,7 @@ def build_contacts(wb, outreach_rows, outreach_headers, write_table):
                 hit[6] = "HubSpot + Lusha"
                 continue
             p = [c["name"], c.get("title", ""), c.get("email", ""), direct, mobile, c.get("linkedin", ""),
-                 "Lusha", "", "", ""]
+                 "Lusha", "", "", "", c.get("note", "")]
             people.append(p)
             index[_norm(c["name"])] = p
             seen.add(_norm(c["name"]))
@@ -89,8 +89,8 @@ def build_contacts(wb, outreach_rows, outreach_headers, write_table):
         people.sort(key=lambda p: (not (p[6].startswith(("HubSpot", "Lusha", "Public"))),
                                    not KEY_ROLE.search(p[1] or ""), not p[2], p[0].lower()))
         for p in people:
-            rows.append([prio, co] + p[:6] + [bool(KEY_ROLE.search(p[1] or "")) and "Yes" or ""] + p[6:] +
-                        company + ["Not contacted", "", ""])
+            rows.append([prio, co] + p[:6] + [bool(KEY_ROLE.search(p[1] or "")) and "Yes" or ""] + p[6:10] +
+                        company + ["Not contacted", "", p[10] if len(p) > 10 else ""])
 
     ws = wb.create_sheet("Contacts", 0)
     headers = ["Priority", "Company", "Contact name", "Designation", "Email", "Phone", "Mobile", "LinkedIn",
