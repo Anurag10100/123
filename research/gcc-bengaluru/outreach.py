@@ -145,7 +145,14 @@ CRM_FILE = Path(__file__).with_name("crm_companies.json")
 CRM_URL = "https://app.hubspot.com/contacts/147308736/record/0-2/{}"
 OWNERS = {"31264458": "Shivam Pathania", "31264460": "Swati Bhattacharya", "31264463": "Vipul Jain",
           "31264465": "Ishan (inactive)", "31264466": "Akansha Pal", "31381972": "Krishna Kumar Singh",
-          "32775033": "Mudit Sharma", "32831970": "Sejal Joshi", "33026142": "Abhay Malhotra"}
+          "32775033": "Mudit Sharma", "32831970": "Sejal Joshi", "33026142": "Abhay Malhotra",
+          "31115589": "Lakshya Kapoor (inactive)", "31381977": "Lakshya Singh (inactive)",
+          "32092249": "Anubhav Kumar Dwivedi", "32092253": "Ronak Tiwari", "32092254": "Arpana Singh",
+          "32110903": "Anuj Sharma (inactive)", "32881438": "Shreya Kumari", "33026141": "Ayush Agarwal",
+          "33183397": "Md. Iqbal", "33609425": "Mohammad Suhail Khan", "33609433": "Ragni Nayak",
+          "34032745": "Rinki Verma", "34807069": "Litishia Raina", "34870449": "Sakshi Raj",
+          "34870452": "Priyanshi Agrawal", "35025264": "Prem Ranjan Das", "35343623": "Priya Singh",
+          "36196623": "Anurag Lakha", "37918715": "Teresa Smrutirekha", "85465367": "Anurag Gupta"}
 TODAY = "2026-10-01"
 
 
