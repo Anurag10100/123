@@ -353,7 +353,13 @@ def main():
         "'# sponsors found' and '# events sponsored' are fixed counts from the build script; re-run "
         "build_gcc_sponsors.py after editing the data to refresh them.",
         "",
-        "OUTREACH SHEET - how to use:",
+        "CONSOLIDATED OUTREACH SHEET - one row per sponsor company from the Bengaluru GCC events: sponsorship history, "
+        "public contact, HubSpot status and next action.",
+        "HubSpot columns are a snapshot taken 1 Oct 2026 (matched on company website domain). 'CRM contacts' = contacts "
+        "already in HubSpot for that company; open 'CRM link' to see them. Where HubSpot has duplicate company records "
+        "(e.g. PwC, Planview) they are combined.",
+        "Next action: 'Active in CRM' = contacted in the last 14 days, so check with the CRM owner first to avoid "
+        "double outreach; 'Existing customer' = has a closed deal; 'New' = not in HubSpot yet.",
         "Priority: A - Hot / B - Warm / C - Nurture, from Score = best tier (Presenting/Platinum 5, Gold/Strategic 3, "
         "Silver/Associate 2, other 1) + 3 per extra GCC event sponsored + 2 if they sponsored in 2026 - 2 if the "
         "sponsorship is unconfirmed. 'Partner only' = government, media or academic partners (in-kind, not paid).",
@@ -362,7 +368,7 @@ def main():
         "event pages) - no Lusha or Clay credits. Every named contact has a source URL; check the person is still "
         "in the role before writing. Emails/phones are only ones the company publishes (often general or media "
         "lines) - none were guessed. Personal emails and direct phones need Lusha/Clay (credits).",
-        "Pale-yellow columns are for your team: update Status (dropdown), Owner and notes. Example: Status "
+        "Pale-yellow columns are for your team: update Status (dropdown), Elets owner and notes. Example: Status "
         "'Contacted', Owner 'Anurag', note 'Sent deck 2 Oct, follow up 9 Oct'.",
         "",
         "Not included (not Bengaluru or not GCC-specific): Nasscom GCC Summit 2025 (Hyderabad) and 2026 (Mumbai); "

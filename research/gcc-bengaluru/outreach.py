@@ -141,6 +141,50 @@ def tier_points(tier):
 STATUSES = ["Not contacted", "Contacted", "In conversation", "Proposal sent", "Won", "Lost", "Not a fit"]
 
 
+CRM_FILE = Path(__file__).with_name("crm_companies.json")
+CRM_URL = "https://app.hubspot.com/contacts/147308736/record/0-2/{}"
+OWNERS = {"31264458": "Shivam Pathania", "31264460": "Swati Bhattacharya", "31264463": "Vipul Jain",
+          "31264465": "Ishan (inactive)", "31264466": "Akansha Pal", "31381972": "Krishna Kumar Singh",
+          "32775033": "Mudit Sharma", "32831970": "Sejal Joshi", "33026142": "Abhay Malhotra"}
+TODAY = "2026-10-01"
+
+
+def load_crm():
+    """HubSpot company matches (snapshot 1 Oct 2026), merged per sponsor company."""
+    if not CRM_FILE.exists():
+        return {}
+    out = {}
+    for name, cid, domain, owner, stage, n_contacts, n_deals, last in json.loads(CRM_FILE.read_text()):
+        c = out.setdefault(name, {"ids": [], "owners": [], "stage": "lead", "contacts": 0, "deals": 0, "last": ""})
+        c["ids"].append(cid)
+        if owner and OWNERS.get(owner) not in c["owners"]:
+            c["owners"].append(OWNERS.get(owner, owner))
+        if stage == "customer":
+            c["stage"] = "customer"
+        c["contacts"] += n_contacts
+        c["deals"] += n_deals
+        c["last"] = max(c["last"], last)
+    return out
+
+
+def days_since(d):
+    from datetime import date
+    return (date.fromisoformat(TODAY) - date.fromisoformat(d)).days if d else None
+
+
+def next_action(crm, has_contact):
+    if not crm:
+        return "New - add to CRM and reach out" + ("" if has_contact else " (find contact first)")
+    if crm["stage"] == "customer":
+        return "Existing customer - pitch via account owner"
+    d = days_since(crm["last"])
+    if d is not None and d <= 14:
+        return "Active in CRM - coordinate with owner before contacting"
+    if d is None:
+        return "In CRM, never contacted - start outreach"
+    return f"In CRM, cold ({d} days) - re-engage"
+
+
 def build_outreach(wb, events, sponsors, canon, write_table):
     ev = {e[0]: e for e in events}
     by_co = {}
@@ -148,6 +192,7 @@ def build_outreach(wb, events, sponsors, canon, write_table):
         by_co.setdefault(canon.get(name, name), []).append((eid, tier, ver))
 
     enrich = load_enrichment()
+    crm_all = load_crm()
     rows = []
     for co, hits in by_co.items():
         e = enrich.get(co, {})
@@ -166,35 +211,50 @@ def build_outreach(wb, events, sponsors, canon, write_table):
         history = "; ".join(f"{ev[e][1]} ({ev[e][4]}) - {t}" for e, t, _ in sorted(hits))
         latest = max(eids, key=lambda e: ("2026" in ev[e][4], e))
         who, angle = ANGLE[cat]
-        rows.append([prio, score, co, cat, g("what_they_do"), g("website"), g("india_hq_city"),
-                     len(eids), best[1], ev[latest][4], history, who, angle,
-                     "Yes" if all_inferred else "",
-                     g("contact_name"), g("contact_title"), g("contact_linkedin_url"), g("public_email"),
-                     g("public_phone"), src, g("confidence"), "Not contacted", "", g("notes")])
+        crm = crm_all.get(co)
+        action = next_action(crm, bool(g("contact_name"))) if prio != "Partner only" else "In-kind partner - not a sales lead"
+        rows.append([
+            prio, score, co, cat, g("what_they_do"), g("website"), g("india_hq_city"),
+            len(eids), best[1], ev[latest][4], history, "Yes" if all_inferred else "",
+            "Yes" if crm else "No",
+            ", ".join(crm["owners"]) if crm else "", crm["stage"].title() if crm else "",
+            crm["contacts"] if crm else "", crm["last"] if crm else "",
+            CRM_URL.format(crm["ids"][0]) if crm else "", action,
+            g("contact_name"), g("contact_title"), g("contact_linkedin_url"), g("public_email"),
+            g("public_phone"), src, g("confidence"), who, angle,
+            "Not contacted", "", g("notes")])
 
     order = {"A - Hot": 0, "B - Warm": 1, "C - Nurture": 2, "Partner only": 3}
     rows.sort(key=lambda r: (order[r[0]], -r[1], r[2].lower()))
 
-    ws = wb.create_sheet("Outreach", 0)
+    ws = wb.create_sheet("Consolidated Outreach", 0)
     headers = ["Priority", "Score", "Company", "Category", "What they do", "Website", "India base",
                "# GCC events sponsored", "Best tier seen", "Latest event date",
-               "Sponsorship history (event - tier)", "Who to contact (roles)", "Pitch angle",
-               "Sponsorship unconfirmed?", "Contact name (public source)", "Designation", "LinkedIn URL",
+               "Sponsorship history (event - tier)", "Sponsorship unconfirmed?",
+               "In HubSpot?", "CRM owner", "CRM stage", "CRM contacts", "CRM last contacted", "CRM link",
+               "Next action",
+               "Contact name (public source)", "Designation", "LinkedIn URL",
                "Published email (company/general)", "Published phone", "Contact source URL(s)",
-               "Contact confidence", "Status", "Owner", "Research notes / next step"]
-    widths = [12, 7, 30, 24, 36, 26, 14, 10, 24, 14, 60, 36, 50, 11, 24, 30, 34, 28, 18, 40, 11, 16, 14, 40]
-    write_table(ws, "Outreach", headers, rows, widths, link_cols=(6, 17, 20))
+               "Contact confidence", "Who to contact (roles)", "Pitch angle",
+               "Status", "Elets owner", "Research notes / next step"]
+    widths = [12, 7, 30, 24, 36, 24, 14, 10, 24, 14, 60, 11,
+              10, 22, 10, 10, 14, 30, 40,
+              24, 30, 34, 28, 18, 40, 11, 36, 50, 16, 14, 40]
+    write_table(ws, "Consolidated", headers, rows, widths, link_cols=(6, 18, 22, 25))
 
     fills = {"A - Hot": "F8CBAD", "B - Warm": "FFE699", "C - Nurture": "DDEBF7", "Partner only": "E7E6E6"}
     from openpyxl.styles import PatternFill, Font
+    crm_fill = {"Yes": "E2EFDA", "No": "FCE4D6"}
     for r in range(2, ws.max_row + 1):
         p = ws.cell(r, 1)
         p.fill = PatternFill("solid", start_color=fills[p.value])
         p.font = Font(name="Arial", size=10, bold=True)
-        for c in range(15, 25):
+        ws.cell(r, 13).fill = PatternFill("solid", start_color=crm_fill[ws.cell(r, 13).value])
+        ws.cell(r, 19).font = Font(name="Arial", size=10, bold=True)
+        for c in range(29, 32):
             ws.cell(r, c).fill = PatternFill("solid", start_color="FFFFF2")
     dv = DataValidation(type="list", formula1='"' + ",".join(STATUSES) + '"', allow_blank=True)
     ws.add_data_validation(dv)
-    dv.add(f"V2:V{ws.max_row}")
+    dv.add(f"AC2:AC{ws.max_row}")
     ws.freeze_panes = "D2"
     return rows
