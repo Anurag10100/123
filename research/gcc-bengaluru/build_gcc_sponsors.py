@@ -374,6 +374,10 @@ def main():
         "Pale-yellow columns are for your team: update Status (dropdown), Elets owner and notes. Example: Status "
         "'Contacted', Owner 'Anurag', note 'Sent deck 2 Oct, follow up 9 Oct'.",
         "",
+        "Contacts tab is filtered to SENIOR people in Marketing, Sales or Leadership (CEO/Founder/MD/Country head/"
+        "Partner) roles; junior titles and other functions are removed. Infosys, PwC India, Accenture, State Bank of "
+        "India, Freshworks, IDFC FIRST Bank and RBL Bank are excluded from the outreach tabs at the user's request.",
+        "",
         "Not included (not Bengaluru or not GCC-specific): Nasscom GCC Summit 2025 (Hyderabad) and 2026 (Mumbai); "
         "GCC XL Summit 2026 (Hyderabad); MachineCon GCC (Goa); ETGCCWorld SURGE (Kerala); AIGCC '26 (Chennai); "
         "Bengaluru Tech Summit 2025 (GCC panels only).",
