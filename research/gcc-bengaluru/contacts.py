@@ -17,6 +17,7 @@ from outreach import OWNERS, STATUSES
 
 HERE = Path(__file__).parent
 CRM_CONTACTS = HERE / "crm_contacts.json"
+LUSHA_CONTACTS = HERE / "lusha_contacts.json"
 CONTACT_URL = "https://app.hubspot.com/contacts/147308736/record/0-1/{}"
 # Titles most likely to own event sponsorship budgets sort to the top of each company.
 KEY_ROLE = re.compile(r"market|brand|event|communicat|cmo|alliance|partnership|sponsor|pr\b|demand|growth",
@@ -34,6 +35,11 @@ def build_contacts(wb, outreach_rows, outreach_headers, write_table):
     by_co = {}
     for c in crm:
         by_co.setdefault(c["company_label"], []).append(c)
+    lusha = json.loads(LUSHA_CONTACTS.read_text()) if LUSHA_CONTACTS.exists() else []
+    lusha_by_co = {}
+    for c in lusha:
+        if c.get("name"):
+            lusha_by_co.setdefault(c["company"], []).append(c)
 
     rows = []
     for r in outreach_rows:
@@ -50,6 +56,24 @@ def build_contacts(wb, outreach_rows, outreach_headers, write_table):
             people.append([name, c["jobtitle"], c["email"], c["phone"], c["mobilephone"], c["linkedin"],
                            "HubSpot", OWNERS.get(c["owner_id"], c["owner_id"]),
                            (c["last_contacted"] or "")[:10], CONTACT_URL.format(c["contact_id"])])
+        index = {_norm(p[0]): p for p in people}
+        for c in lusha_by_co.get(co, []):
+            phone = c.get("phone", "")
+            mobile = phone if "mobile" in (c.get("phone_type") or "").lower() else ""
+            direct = "" if mobile else phone
+            hit = index.get(_norm(c["name"]))
+            if hit:  # already listed: fill gaps only
+                hit[2] = hit[2] or c.get("email", "")
+                hit[3] = hit[3] or direct
+                hit[4] = hit[4] or mobile
+                hit[5] = hit[5] or c.get("linkedin", "")
+                hit[6] = "HubSpot + Lusha"
+                continue
+            p = [c["name"], c.get("title", ""), c.get("email", ""), direct, mobile, c.get("linkedin", ""),
+                 "Lusha", "", "", ""]
+            people.append(p)
+            index[_norm(c["name"])] = p
+            seen.add(_norm(c["name"]))
         pub = get(r, "Contact name (public source)")
         if pub and _norm(pub) not in seen:
             src = (get(r, "Contact source URL(s)") or "").split(" | ")[0]
@@ -62,7 +86,7 @@ def build_contacts(wb, outreach_rows, outreach_headers, write_table):
                            get(r, "Published phone"), "", "", "Company website", "", "", ""])
         if not people:
             people.append(["- no contact found yet -", "", "", "", "", "", "", "", "", ""])
-        people.sort(key=lambda p: (p[6] != "HubSpot" and not p[6].startswith("Public"),
+        people.sort(key=lambda p: (not (p[6].startswith(("HubSpot", "Lusha", "Public"))),
                                    not KEY_ROLE.search(p[1] or ""), not p[2], p[0].lower()))
         for p in people:
             rows.append([prio, co] + p[:6] + [bool(KEY_ROLE.search(p[1] or "")) and "Yes" or ""] + p[6:] +
