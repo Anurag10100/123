@@ -16,6 +16,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 from outreach import build_outreach
 
 OUT = Path(__file__).with_name("bengaluru_gcc_events_sponsors.xlsx")
+OUT_OUTREACH = Path(__file__).with_name("bengaluru_gcc_consolidated_outreach.xlsx")
 
 # id, event, organiser, edition, date, venue, status, website, sponsors_page, notes
 EVENTS = [
@@ -385,6 +386,14 @@ def main():
         c.alignment = Alignment(wrap_text=True, vertical="top")
 
     wb.save(OUT)
+
+    # Standalone outreach file: just the consolidated tab and the notes.
+    from openpyxl import load_workbook
+    solo = load_workbook(OUT)
+    for name in solo.sheetnames:
+        if name not in ("Consolidated Outreach", "Notes"):
+            del solo[name]
+    solo.save(OUT_OUTREACH)
     print(f"{OUT}: {len(outreach)} outreach rows, {n_ev} events, {n_sp} sponsor rows, {len(ordered)} companies")
 
 
